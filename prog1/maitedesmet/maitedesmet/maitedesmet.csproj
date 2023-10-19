@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="obj\D01bmi.cs" />
+    <Compile Include="obj\D01centimetersnaarmeters.cs" />
+    <Compile Include="obj\D01codedepositioneren.cs" />
+    <Compile Include="obj\D01euronaarpound.cs" />
+    <Compile Include="obj\D01totalebedrag.cs" />
+    <Compile Include="obj\D01waardeomwisselen.cs" />
+  </ItemGroup>
+
+</Project>

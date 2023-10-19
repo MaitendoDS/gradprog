@@ -1,0 +1,37 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace D04
+{
+    internal class D04weermetrobuusteinvoer
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Schijnt de zon (ja/nee)?: ");
+            string zon = Console.ReadLine().ToLower().Trim();
+
+             bool deZonSchijnt = (zon == "ja");
+           
+
+            Console.Write("Regent het (ja/nee)?: ");
+            string regen = Console.ReadLine().ToLower().Trim();
+            bool hetRegent = (regen == "ja");
+
+            if (deZonSchijnt)
+            {
+                if (hetRegent)
+                { Console.WriteLine("Regenboog."); }
+
+                else { Console.WriteLine("Mooi weer."); }
+            }
+            else
+            {
+                if (hetRegent) { Console.WriteLine("Slecht weer"); }
+                else Console.WriteLine("Saaie dag.");
+            }
+        }
+    }
+}
