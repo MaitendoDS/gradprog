@@ -13,7 +13,7 @@ namespace D07
             Console.Write("Geef een tekst : ");
             string input = Console.ReadLine();
 
-            for (int i = input.Length - 1; i >= 0; i--)
+            for (int i = input.Length -1;i >=0; i--)
             {
                 char c = input[i];
                 Console.Write(c);
