@@ -13,16 +13,21 @@ namespace D07
         {
             Console.WriteLine("geef een tekst:");
             string tekst = Console.ReadLine();
-            
 
-            for (int i = 0; i <= tekst.Length-1; i++){
-                
-            char c = tekst[i];
-                if (i<5) {
+                    string restVanTekst = tekst.Substring(5);
+
+            for (int i = 0; i <= tekst.Length - 1; i++)
+            {
+
+                char c = tekst[i];
+                if (i < 5)
+                {
                     c = char.ToUpper(c);
+                    Console.Write(c);
                 }
-        
 
+            }
+                    Console.Write(restVanTekst);
         }
     }
 }
