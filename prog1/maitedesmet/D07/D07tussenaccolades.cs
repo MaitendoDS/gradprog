@@ -13,7 +13,13 @@ namespace D07
             Console.WriteLine("geef een teskts: ");
             string tekst = Console.ReadLine();
 
+            int indexLinks = tekst.IndexOf("{");
+                int indexRechts = tekst.IndexOf("}");
 
+            if (indexLinks != -1 ) && indexRechts !=-1 && indexLinks<indexRechts) {
+            
+            
+            }
         }
     }
 }
