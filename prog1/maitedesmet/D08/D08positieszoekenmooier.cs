@@ -25,6 +25,31 @@ namespace D08
 
                 }
                 else { Console.WriteLine("waarde niet gevonden"); }
+
+                //int[] a = { 5, 3, 1, -1, -3, 3, 9, -4 };
+
+                //Console.Write("Geef een getal : ");
+                //string zoekGetalAlsTekst = Console.ReadLine();
+                //int zoekGetal = int.Parse(zoekGetalAlsTekst);
+
+                //string positiesTekst = "";
+                //for (int i = 0; i < a.Length; i++)
+                //{
+                //    int getal = a[i];
+                //    if (getal == zoekGetal)
+                //    {
+                //        positiesTekst += i + " ";
+                //    }
+                //}
+
+                //if (positiesTekst != "")
+                //{
+                //    Console.WriteLine($"waarde {zoekGetal} gevonden op positie(s) {positiesTekst}");
+                //}
+                //else
+                //{
+                //    Console.WriteLine("waarde niet gevonden");
+                }
             }
         }
     }
