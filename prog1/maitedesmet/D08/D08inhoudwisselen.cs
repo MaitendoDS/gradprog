@@ -17,8 +17,7 @@ namespace D08
             Console.WriteLine(String.Join(',', a));
 
             int[] c = a;
-            
-
+           
             a = b;
             b = c;
 

@@ -5,7 +5,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>D08.D08inhoudwisselen</StartupObject>
+    <StartupObject>D08.D08positieszoekenmooier</StartupObject>
   </PropertyGroup>
 
 </Project>
