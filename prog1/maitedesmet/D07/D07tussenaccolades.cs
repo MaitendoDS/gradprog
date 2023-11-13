@@ -10,15 +10,22 @@ namespace D07
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("geef een teskts: ");
+            Console.Write("Geef een tekst : ");
             string tekst = Console.ReadLine();
 
             int indexLinks = tekst.IndexOf("{");
-                int indexRechts = tekst.IndexOf("}");
+            int indexRechts = tekst.IndexOf("}");
 
-            if (indexLinks != -1 ) && indexRechts !=-1 && indexLinks<indexRechts) {
-            
-            
+            if (indexLinks != -1 && indexRechts != -1 && indexLinks < indexRechts)
+            {
+                int lengteTekstErtussen = indexRechts - indexLinks - 1;
+                int indexTekstErtussen = indexLinks + 1;
+                string tekstErtussen = tekst.Substring(indexTekstErtussen, lengteTekstErtussen);
+                Console.WriteLine($"gevonden : {tekstErtussen}");
+            }
+            else
+            {
+                Console.WriteLine("niet gevonden");
             }
         }
     }

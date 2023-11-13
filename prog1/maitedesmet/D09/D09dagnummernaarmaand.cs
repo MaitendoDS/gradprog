@@ -16,7 +16,7 @@ namespace D09
             Console.WriteLine("geef het dagnummer: ");
             int dagnummer = int.Parse(Console.ReadLine());
 
-            string maand = "";
+            string maand = "onbepaald";
             int laatseDagNummmerDezeMaand = 0;
 
             for (int i = 0; i < aantalDagen.Length; i++)
