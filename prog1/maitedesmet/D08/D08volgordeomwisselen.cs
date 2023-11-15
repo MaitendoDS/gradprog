@@ -30,3 +30,28 @@ namespace D08
         }
     }
 }
+
+//namespace D08VolgordeOmwisselen
+//{
+//    internal class D08VolgordeOmwisselen
+//    {
+//        static void Main(string[] args)
+//        {
+//            Console.Write("Hoeveel namen wil je ingeven: ");
+//            int aantalNamen = int.Parse(Console.ReadLine());
+//            string[] namen = new string[aantalNamen];
+//            for (int i = 0; i < namen.Length; i++)
+//            {
+//                Console.Write($"Geef naam {i}: ");
+//                namen[i] = Console.ReadLine();
+//            }
+//            Console.WriteLine("");
+//            Console.WriteLine("--- Omgekeerde volgorde ---");
+//            for (int i = 0; i < namen.Length; i++)
+//            {
+//                int index = (namen.Length - 1) - i;
+//                Console.WriteLine("naam " + index + ": " + namen[index]);
+//            }
+//        }
+//    }
+//}

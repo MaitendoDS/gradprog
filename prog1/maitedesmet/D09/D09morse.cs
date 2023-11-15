@@ -12,7 +12,7 @@ namespace D09
         {
             string[] morse = { ".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.." };
             char[] letters = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
-
+          
             do
             {
                 Console.Write("Morse code voor de volgende letter (. voor kort, - voor lang) ?: ");
@@ -22,6 +22,7 @@ namespace D09
                 int index = Array.IndexOf(morse, input);
                 string[] tekstTotNuToe = new string[letters.Length];
 
+                
                 for (int i = 0; i < letters.Length; i++)
                 {
                     tekstTotNuToe[i] = letters[i].ToString();
@@ -47,6 +48,32 @@ namespace D09
 
 
             } while (true);
+
+
+            //domien:
+            //string[] morse = { ".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.." };
+            //char[] letters = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
+            //bool isMorse = false;
+            //string tekst = "";
+            //for (int i = 0; i < morse.Length; i++)
+            //{
+            //    Console.WriteLine("Morse code voor de volgende letter (. voor kort, - voor lang)?: ");
+            //    string inputMorse = Console.ReadLine();
+
+            //    if (isMorse = true && inputMorse == morse[i])
+            //    {
+            //        Console.WriteLine("Opgebouwde tekst tot nu toe: ");
+            //        tekst += letters[i];
+            //        Console.WriteLine(tekst);
+            //    }
+            //    else
+            //    {
+
+            //        Console.WriteLine("Ongeldige morse code! ");
+            //    }
+
+            //}
+            //stukje van mij:
 
             //string[] morse = { ".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.." };
             //char[] letters = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };

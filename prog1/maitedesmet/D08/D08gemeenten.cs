@@ -21,7 +21,7 @@ namespace D08
             gemeenten[6] = "Gent";
             gemeenten[7] = "9000";
 
-            for (int i = 1; i < gemeenten.Length; i= i+2)
+            for (int i = 1; i < gemeenten.Length; i=+2)
             {
                 Console.WriteLine(gemeenten[i]);
             }

@@ -32,7 +32,7 @@ namespace D09
                 }
             }
 
-            Console.WriteLine($"aantal woorden is {aantalWoorden}")langsteWoord;"
+            //Console.WriteLine($"aantal woorden is {aantalWoorden}")langsteWoord;"
 ;            Console.WriteLine($"het langste woord is {langsteWoord}");
         }
     }
