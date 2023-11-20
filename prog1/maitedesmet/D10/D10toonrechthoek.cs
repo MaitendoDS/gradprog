@@ -10,29 +10,36 @@ namespace D10
     {
         static void Main()
         {
-            ToonRechthoek();
-        }
-        static void ToonRechthoek()
-        {
-            Console.Write("Hoogte?: ");
-            int hoogte = int.Parse(Console.ReadLine());
-            if 
-
-            Console.Write("Breedte?: ");
-            int breedte = int.Parse(Console.ReadLine());
-
-            int hoogteTeller = 0;
+            bool juisteinvoer;
+            int breedte = 0;
             do
             {
-                int breedteTeller = 0;
-                do
+                Console.Write("Geef de breedte: ");
+                string breedteAlsTekst = Console.ReadLine();
+                juisteinvoer = int.TryParse(breedteAlsTekst, out breedte);
+            } while (!juisteinvoer);
+            
+            int hoogte = 0;
+            do
+            {
+                Console.Write("Geef de hoogte: ");
+                string hoogteAlsTekst = Console.ReadLine();
+                juisteinvoer = int.TryParse(hoogteAlsTekst, out hoogte);
+            } while (!juisteinvoer);
+
+            Console.WriteLine();
+            ToonRechthoek(breedte,hoogte);
+
+        }
+        static void ToonRechthoek(int breedte, int hoogte)
+        {
+          for (int i = 0; i < hoogte; i++)
+            {
+                for (int j = 0; j < breedte; j++)
                 {
-                    Console.Write("*");
-                    breedteTeller = breedteTeller + 1;
-                } while (breedteTeller < breedte);
-                Console.WriteLine();
-                hoogteTeller = hoogteTeller + 1;
-            } while (hoogteTeller < hoogte);
+                    Console.WriteLine("*");
+                }
+            }
         }
     }
 }
