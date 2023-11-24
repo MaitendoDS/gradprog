@@ -37,9 +37,11 @@ namespace D10
             {
                 for (int j = 0; j < breedte; j++)
                 {
-                    Console.WriteLine("*");
+                    Console.Write("*");
                 }
+                Console.WriteLine();
             }
+
         }
     }
 }

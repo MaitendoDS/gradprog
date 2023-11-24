@@ -5,7 +5,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>D10.D10toonrechthoek</StartupObject>
+    <StartupObject>D10.D10toongetallenmetmethod</StartupObject>
   </PropertyGroup>
 
 </Project>
