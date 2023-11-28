@@ -14,9 +14,9 @@ namespace D10
             ToonGetallen(getallen);
 
         }
-        static void ToonGetallen(int[]getallen)
+        static void ToonGetallen(int[] input)
         {
-            Console.WriteLine(getallen);
+            Console.WriteLine(String.Join(',', input));
         }
     }
 }
