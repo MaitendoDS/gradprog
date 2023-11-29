@@ -10,12 +10,27 @@ namespace D10
     {
         static void Main(string[] args)
         {
+            Console.Write("Geef een getal: ");
+            int invoer = int.Parse(Console.ReadLine());
+                       
+            Console.WriteLine(GetFaculteit(invoer));
 
             
+
         }
-        static int GetFaculteit()
+        static int GetFaculteit(int getal)
         {
 
+
+            int product = 1;
+            for (int i = 2; i <= getal; i++)
+            {
+                product = product * i;
+
+            }
+            return product;
+
+            
         }
     }
 }
