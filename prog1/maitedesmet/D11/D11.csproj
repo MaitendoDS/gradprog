@@ -5,7 +5,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>D11.D11palindroom</StartupObject>
+    <StartupObject>D11.D11filter</StartupObject>
   </PropertyGroup>
 
 </Project>
