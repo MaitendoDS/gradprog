@@ -44,19 +44,31 @@ namespace D11
         }
         static int[] Filter(int[] getallen, int min, int max)
         {
-            getallen[0] = min;
-           foreach (int getal in getallen)
-            {
-               for (int i=0;i>getallen.Length-1;i++)
-                {
 
-                }
-                if (getal >= min && getal<= max)
+
+            int teller = 0;
+            
+            for (int i = 0; i < getallen.Length; i++)
+            {
+                if (getallen[i] >= min && getallen[i] <= max)
                 {
-                    
+                    teller++;
+                }
+
+            }
+            int[] gefilterd = new int[teller];
+
+            int index = 0;
+            for (int i = 0; i < getallen.Length; i++)
+            {
+                if (getallen[i] >= min && getallen[i] <= max)
+                {
+                    gefilterd[index] = getallen[i];
+                    index++;
                 }
             }
-           return getallen;
+
+            return gefilterd;
         }
     }
 }
