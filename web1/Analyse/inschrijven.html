@@ -3,33 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Schooladministratie - Hogeschool Gent</title>
+    <link rel="stylesheet" href="styleindex.css">
 </head>
 <body>
-    <header>
-        <h1>Inschrijven Student - Hogeschool Gent</h1>
-    </header>
-    
-    <form action="#" method="post">
-        <label for="naam">Naam:</label>
-        <input type="text" id="naam" name="naam" required>
-    
-        <label for="opleiding">Opleiding:</label>
-        <select id="opleiding" name="opleiding" required>
-            <!-- Opties voor beschikbare opleidingen -->
-            <option value="informatica">Informatica</option>
-            <option value="elektrotechniek">Elektrotechniek</option>
-            <!-- Voeg hier meer opleidingen toe -->
-        </select>
-    
-        <!-- Voeg hier meer inputvelden toe voor andere benodigde informatie -->
-    
-        <button type="submit">Inschrijven</button>
-    </form>
-    
-    <footer>
-        <p>&copy; 2023 Schooladministratie - Hogeschool Gent</p>
-    </footer>
-    
+   
+<nav class="navbar">
+    <ul>
+        <li><a href="index.html"><img src="https://www.hogent.be/themes/hogent/assets/images/HOGENT_Logo.png" height="15px" width="30px" alt="logo"></a></li>
+        <li><a href="studenten.html">Studenten</a></li>
+        <li><a href="evaluaties.html">Evaluaties</a></li>
+        <li><a href="opleidingen.html">Opleidingen</a></li>
+        <li><a href="vakken.html">Vakken</a></li>
+        <li><a href="lessen.html">Lessen</a></li>
+        <li><a href="docenten.html">Docenten</a></li>
+        <li><a href="uitloggen.html"><img src="https://static-00.iconduck.com/assets.00/log-out-icon-2048x2048-cru8zabe.png" height="15px" width="15px" alt="logout"></a></li>
+    </ul>
+</nav>
+
+<main>
+    <h1>Een student inschrijven</h1>
+    <h2>Gegevensformulier</h2>
+
+    <form action= "" method="post">
+        
+        <table>
+        
+            <tr>
+                <td> <label for="voornaam">Voornaam: </label></td>
+                <td> <input id="voornaam" type="text" name="voornaam" autofocus> </td>
+            </tr>
+            <tr>
+                <td> <label for="achternaam">Achternaam: </label></td>
+                <td> <input id="achternaam" type="text" name="achternaam"> </td>
+            </tr>
+            <tr>
+                <td> <label for="geboortedatum">Geboortedatum: </label> </td>
+                <td> <input id=geboortedatum type="date" name="geboortedatum"></td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Geslacht:</p>
+                    <input type="radio" name="gender" value="man" checked> Man<br>
+                    <input type="radio" name="gender" value="vrouw" checked> Vrouw<br>
+                    <input type="radio" name="gender" value="anders" checked> Anders<br>
+                </td>
+            </tr>
+            <tr>
+                <td> <label for="straat">Straat: </label></td>
+                <td> <input id="straat" type="text" name="straat"> </td>
+            </tr>
+          
+            <tr>
+                <td> <label for="huisnummer">Huisnummer: </label></td>
+                <td> <input id="huisnummer" type="text" name="huisnummer"> </td>
+            </tr>
+            <tr>
+                <td> <label for="postcode">Postcode: </label></td>
+                <td> <input id="postcode" type="text" name="postcode"> </td>
+            </tr>
+            <tr>
+                <td> <label for="gemeente">Gemeente: </label></td>
+                <td> <input id="gemeente" type="text" name="gemeente"> </td>
+            </tr>
+            <tr>
+                <td> <label for="land">Land: </label></td>
+                <td> <input id="land" type="text" name="land"> </td>
+            </tr>
+             <tr>
+                <td> <label for="email">Email: </label></td>
+                <td> <input id="email" type="email" name="email">  </td>
+            </tr>
+            <tr>
+                <td> <label for="rijksregisternummer">Rijksregisternummer</label> </td>
+                <td> <input id="rijksregisternummer" type="text" name="rijksregisternummer"> </td>
+            </tr>
+            <tr>
+                <td> <label for="hoogstediploma">Hoogst behaalde diploma</label> </td>
+                <td> <input id="hoogstediploma" type="text" name="hoogstediploma"> </td>
+            </tr>
+            <tr>
+                <td> <label for="telefoonnummer">Telefoonnummer</label> </td>
+                <td> <input id="telefoonnummer" type="tel" name="telefoonnummer"> </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Gekozen vak:</p>
+                    <select>
+                       
+                     <option value="Analyse">Analyse</option>
+                     <option value="Web">Web</option>
+                     <option value="Programmeren">Programmeren</option>
+                     <option value="Digitale Werkomgeving">Digitale Werkomgeving</option>
+                    </select>
+                </td>
+                </tr>
+               <tr>
+                <td>
+                    <input type="submit" value="Indienen">
+                </td>
+               </tr> 
+            </form>
+        
+</main>
+
 </body>
 </html>
