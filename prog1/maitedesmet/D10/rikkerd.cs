@@ -30,6 +30,12 @@ namespace D10
     }
 }
 
+//const int frequentie = 750;
+
+//Console.Beep(frequentie, 500);
+//System.Threading.Thread.Sleep(250);
+//Console.Beep(frequentie, 1000);
+//----
 
 //static void Main(string[] args)
 //{

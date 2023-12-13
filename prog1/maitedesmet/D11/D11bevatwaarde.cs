@@ -38,7 +38,47 @@ namespace D11
         //{
         //    if (
         //}
+        static void Main(string[] args)
+        {
+            int[] getallen = new int[4];
+            int getal = 0;
+
+            for (int i = 0; i < 6; i++)
+            {
+                bool invoerOK = false;
+
+                while (!invoerOK)
+                {
+                    Console.Write($"Geef getal #{i + 1}: ");
+                    string input = Console.ReadLine();
+
+                    if (int.TryParse(input, out getal) && getal != 0 && !BevatWaarde(getallen, getal))
+                    {
+                        getallen[i] = getal;
+                        invoerOK = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Ongeldige invoer. Probeer het opnieuw.");
+                    }
+                }
+            }
+
+            Console.WriteLine($"De array bevat: {string.Join(",", getallen)}");
+        }
+        static bool BevatWaarde(int[] getallen, int zoekgetal)
+        {
+            foreach (int getal in getallen)
+            {
+                if (zoekgetal == getal)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
+}
 
 }
 

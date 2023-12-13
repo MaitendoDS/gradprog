@@ -5,7 +5,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>D12.D12seizoen</StartupObject>
+    <StartupObject>D12.D12frequenties</StartupObject>
   </PropertyGroup>
 
 </Project>
