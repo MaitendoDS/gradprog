@@ -10,10 +10,7 @@ main{
 h1{
     text-align: center;
 }
-h4{
-    margin-top: 10px;
-    margin-bottom: 5px;
-}
+
 
 .navbar ul{
     list-style-type: none;
@@ -36,7 +33,57 @@ h4{
 .navbar li{
     float: left;
 }
-.gender{
-    align-items: center;
+.inschrijvingsformulier{
+    text-align: left;
+    
+    padding: 5%;
+    background-color: white;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}  
+.uitloggen {
+  
 }
 
+.container{
+    display: flex;    
+    flex-direction: row;
+    justify-content: space-evenly;
+   
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: space-around;
+    align-content: flex-start;
+    
+    row-gap: 2em;
+    margin-block-start: 20px;
+    margin-block-end: 20px;
+    
+}
+
+.box{
+   
+    height: 250px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    border-style: groove;
+    border: 18px solid white;
+    border-bottom: 30px solid white;
+
+    border-radius: 15px;
+    
+  
+}
+.studenten{
+    
+}
+.container h4{
+    color: black;
+    
+    margin-top: 0%;
+    margin-bottom: 10%;
+    
+}
