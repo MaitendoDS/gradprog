@@ -11,107 +11,106 @@
 <nav class="navbar">
     <ul>
         <li><a href="index.html"><img src="https://www.hogent.be/themes/hogent/assets/images/HOGENT_Logo.png" height="15px" width="30px" alt="logo"></a></li>
-        <li><a href="studenten.html">Studenten</a></li>
-        <li><a href="evaluaties.html">Evaluaties</a></li>
         <li><a href="opleidingen.html">Opleidingen</a></li>
         <li><a href="vakken.html">Vakken</a></li>
         <li><a href="lessen.html">Lessen</a></li>
         <li><a href="docenten.html">Docenten</a></li>
+        <li><a class="pagina" href="studenten.html">Studenten</a></li>
+        <li><a href="evaluaties.html">Evaluaties</a></li>
         <li><a href="uitloggen.html"><img src="https://static-00.iconduck.com/assets.00/log-out-icon-2048x2048-cru8zabe.png" height="15px" width="15px" alt="logout"></a></li>
     </ul>
 </nav>
 
 <main>
     <h1>Een student inschrijven</h1>
-
     <div class="gegevensformulier">
         <h2>Gegevensformulier</h2>
-    </div>
-    
-    
-    <form action= "" method="post">
         
-        <table class="inschrijvingsformulier">
+        <form action= "studenten.html" method="">
             
-                   
+            <table class="inschrijvingsformulier">
+                
+                
                 <tr>
-                    <td> <label for="voornaam">Voornaam: </label></td>
-                    <td> <input id="voornaam" type="text" name="voornaam" autofocus> </td>
+                    <td> <label for="voornaam">Voornaam:</label></td>
+                    <td> <input id="voornaam" type="text" name="voornaam" autofocus required> </td>
                 </tr>
                 <tr>
                     <td> <label for="achternaam">Achternaam: </label></td>
-                    <td> <input id="achternaam" type="text" name="achternaam"> </td>
+                    <td> <input id="achternaam" type="text" name="achternaam" required></td>
                 </tr>
-            
-            <tr>
-                <td> <label for="geboortedatum">Geboortedatum: </label> </td>
-                <td> <input id=geboortedatum type="date" name="geboortedatum"></td>
-            </tr>
-            <tr>
-                <td>
-                    <p>Geslacht:</p>
-                    <input type="radio" name="gender" value="man" checked> Man<br>
-                    <input type="radio" name="gender" value="vrouw" checked> Vrouw<br>
-                    <input type="radio" name="gender" value="anders" checked> Anders<br>
-                </td>
-            </tr>
-            <tr>
-                <td> <label for="straat">Straat: </label></td>
-                <td> <input id="straat" type="text" name="straat"> </td>
-            </tr>
+                
+                <tr>
+                    <td> <label for="geboortedatum">Geboortedatum: </label> </td>
+                    <td> <input id=geboortedatum type="date" name="geboortedatum" required></td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Geslacht:</p>
+                        <input type="radio" name="gender" value="man" checked> Man<br>
+                        <input type="radio" name="gender" value="vrouw" checked> Vrouw<br>
+                        <input type="radio" name="gender" value="anders" checked autofocus> Anders<br>
+                    </td>
+                </tr>
+                <tr>
+                    <td> <label for="straat">Straat: </label></td>
+                    <td> <input id="straat" type="text" name="straat" required> </td>
+                </tr>
           
-            <tr>
-                <td> <label for="huisnummer">Huisnummer: </label></td>
-                <td> <input id="huisnummer" type="text" name="huisnummer"> </td>
-            </tr>
-            <tr>
-                <td> <label for="postcode">Postcode: </label></td>
-                <td> <input id="postcode" type="text" name="postcode"> </td>
-            </tr>
-            <tr>
-                <td> <label for="gemeente">Gemeente: </label></td>
-                <td> <input id="gemeente" type="text" name="gemeente"> </td>
-            </tr>
-            <tr>
-                <td> <label for="land">Land: </label></td>
-                <td> <input id="land" type="text" name="land"> </td>
-            </tr>
-             <tr>
-                <td> <label for="email">Email: </label></td>
-                <td> <input id="email" type="email" name="email">  </td>
-            </tr>
-            <tr>
-                <td> <label for="rijksregisternummer">Rijksregisternummer</label> </td>
-                <td> <input id="rijksregisternummer" type="text" name="rijksregisternummer"> </td>
-            </tr>
-            <tr>
-                <td> <label for="hoogstediploma">Hoogst behaalde diploma</label> </td>
-                <td> <input id="hoogstediploma" type="text" name="hoogstediploma"> </td>
-            </tr>
-            <tr>
-                <td> <label for="telefoonnummer">Telefoonnummer</label> </td>
-                <td> <input id="telefoonnummer" type="tel" name="telefoonnummer"> </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>Gekozen vak:</p>
-                    <select>
-                       
-                     <option value="Analyse">Analyse</option>
-                     <option value="Web">Web</option>
-                     <option value="Programmeren">Programmeren</option>
-                     <option value="Digitale Werkomgeving">Digitale Werkomgeving</option>
-                    </select>
-                </td>
+                <tr>
+                    <td> <label for="huisnummer">Huisnummer: </label></td>
+                    <td> <input id="huisnummer" type="text" name="huisnummer" required> </td>
                 </tr>
-               <tr>
-                <td>
-                    <input type="submit" value="Indienen">
-                </td>
-               </tr> 
+                <tr>
+                    <td> <label for="postcode">Postcode: </label></td>
+                    <td> <input id="postcode" type="text" name="postcode" required> </td>
+                </tr>
+                <tr>
+                    <td> <label for="gemeente">Gemeente: </label></td>
+                    <td> <input id="gemeente" type="text" name="gemeente" required> </td>
+                </tr>
+                <tr>
+                    <td> <label for="land">Land: </label></td>
+                    <td> <input id="land" type="text" name="land" required> </td>
+                </tr>
+                <tr>
+                    <td> <label for="email">Email: </label></td>
+                    <td> <input id="email" type="email" name="email" required>  </td>
+                </tr>
+                <tr>
+                    <td> <label for="rijksregisternummer">Rijksregisternummer: </label> </td>
+                    <td> <input id="rijksregisternummer" type="text" name="rijksregisternummer" required> </td>
+                </tr>
+                <tr>
+                    <td> <label for="hoogstediploma">Hoogst behaalde diploma: </label> </td>
+                    <td> <input id="hoogstediploma" type="text" name="hoogstediploma" required> </td>
+                </tr>
+                <tr>
+                    <td> <label for="telefoonnummer">Telefoonnummer: </label> </td>
+                    <td> <input id="telefoonnummer" type="tel" name="telefoonnummer" required> </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Gekozen vak:</p>
+                        <select>
+                            
+                            <option value="Analyse" required>Analyse</option>
+                            <option value="Web">Web</option>
+                            <option value="Programmeren">Programmeren</option>
+                            <option value="Digitale Werkomgeving">Digitale Werkomgeving</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Indienen">
+                    </td>
+                </tr> 
             </form>
+        </div>
+            
+        </main>
         
-</main>
-
-</body>
-</html>
+    </body>
+    </html>
+    

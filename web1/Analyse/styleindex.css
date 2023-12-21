@@ -1,49 +1,102 @@
 body{
     margin: 0px;
-    background-color:rgb(237, 243, 250);
+    background-color:rgb(133, 147, 161);
 }
 main{
     margin-left: 20px;
     margin-right: 20px;
 }
 
-h1{
-    text-align: center;
-}
-
 
 .navbar ul{
     list-style-type: none;
-    background-color: rgb(145, 164, 185);
+    background-color: rgb(90, 105, 121);
     padding: 0px;
     margin: 0px;
     overflow: hidden;
 }
 .navbar a{
-    color: white;
+    color: rgba(231, 236, 242, 0.545);
     text-decoration: none;
     padding: 15px;
     display: block;
     text-align: center;
-    font-size: 20px;
+    font-size: 20px;   
 }
 .navbar a:hover{
-    background-color: rgb(168, 191, 214) ;
+    background-color: rgb(103, 120, 137) ;
+    color: rgba(231, 236, 242, 0.919);
 }
 .navbar li{
-    float: left;
+    float: left;    
 }
-.inschrijvingsformulier{
-    text-align: left;
+.navbar li:last-child{
+ float:right; 
+}
+.pagina{
+    background-color:rgba(133, 147, 161, 0.54);
+}
+
+.uitloggen{
+    background-color: rgba(245, 246, 248, 0);
+    display: flex;    
+    flex-direction: row;
+    column-gap: 1rem;
+    align-items: center;
     
-    padding: 5%;
-    background-color: white;
-    padding-top: 3%;
-    padding-bottom: 3%;
-}  
-.uitloggen {
-  
+    margin:20px;
+    
+    flex-wrap: wrap;
+    align-content: center;
+    
+        
+    
+
 }
+.loguit{
+    
+    text-decoration: none;
+    font-size: small;
+    background-color: rgba(225, 234, 244, 0.644);
+    color: rgba(9, 34, 66, 0.725);
+    border: 4px solid rgba(173, 183, 195, 0.644);
+    border-radius: 2rem;
+    padding: 10px;    
+}
+.uitloggen a:hover{
+    background-color: rgb(225, 234, 244);
+    color: rgba(9, 34, 66, 0.629);
+    border: 4px solid rgba(185, 193, 203, 0.436);
+    padding: 12px;
+    border-radius: 2rem;
+}
+
+.nietuitloggen{
+    text-decoration: none;
+    font-size: small;
+    background-color: rgba(225, 234, 244, 0.644);
+    color: rgba(9, 34, 66, 0.725);
+    border: 4px solid rgba(173, 183, 195, 0.644);
+    border-radius: 2rem;
+    padding: 10px;   
+}
+
+
+
+.gegevensformulier{
+    font-size: large;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;        
+    background-color: rgb(217, 224, 225);    
+    padding-bottom: 40px;
+    border: 4px solid rgba(178, 185, 186, 0.41);
+    border-radius: 1rem;
+    box-sizing: border-box;
+}  
+
+
 
 .container{
     display: flex;    
@@ -56,16 +109,14 @@ h1{
     align-content: flex-start;
     
     row-gap: 2em;
+    column-gap: 1em;
     margin-block-start: 20px;
-    margin-block-end: 20px;
-    
+    margin-block-end: 20px;    
 }
-
-.box{
-   
+.box{   
     height: 250px;
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 10px;
     margin-bottom: 10px;
     text-align: center;
@@ -74,16 +125,54 @@ h1{
     border-bottom: 30px solid white;
 
     border-radius: 15px;
-    
-  
-}
-.studenten{
-    
 }
 .container h4{
     color: black;
-    
+    font-size: larger;
     margin-top: 0%;
-    margin-bottom: 10%;
-    
+    margin-bottom: 10%;    
+}
+.studenten{    
+    display: flex;    
+    flex-direction: column;
+    justify-content: space-evenly;   
+    align-items: center;    
+    row-gap: 3em;    
+    margin-block-start: 2rem;
+    margin-block-end: 2rem;
+}
+.studentenh1{
+    margin: 2rem;
+}
+.studentinschrijven a{          
+    text-decoration: none;
+    font-size: x-large;
+    background-color: rgba(225, 234, 244, 0.644);
+    color: rgba(9, 34, 66, 0.5);
+    border: 4px solid rgba(173, 183, 195, 0.644);
+    border-radius: 2rem;
+    padding: 10px;    
+}
+.studentinschrijven a:hover{
+    background-color: rgb(225, 234, 244);
+    color: rgba(9, 34, 66, 0.629);
+    border: 4px solid rgba(185, 193, 203, 0.436);
+    padding: 12px;
+    border-radius: 2rem;
+}
+.studentenbekijken a{
+    text-decoration: none;
+    font-size: x-large;
+    background-color: rgba(225, 234, 244, 0.644);
+    color: rgba(9, 34, 66, 0.5);
+    border: 4px solid rgba(173, 183, 195, 0.644);
+    border-radius: 2rem;
+    padding: 10px;    
+}
+.studentenbekijken a:hover{
+    background-color: rgb(225, 234, 244);
+    color: rgba(9, 34, 66, 0.629);
+    border: 4px solid rgba(185, 193, 203, 0.436);
+    padding: 12px;
+    border-radius: 2rem;
 }
