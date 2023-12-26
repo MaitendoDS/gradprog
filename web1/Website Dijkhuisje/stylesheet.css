@@ -1,0 +1,47 @@
+:root{
+    --clr-darkest: rgb(206, 148, 97);
+    --clr-dark: rgb(222, 160, 87);
+    --clr-light:rgb(224, 216, 176) ;
+    --clr-lightest: rgb(252, 255, 231);
+    --clr-main: ;
+}
+
+body{
+    background-color: var(--clr-lightest);
+}
+.navbar ul{
+    list-style-type: none;
+    background-color:var(--clr-light); 
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+}
+.navbar a{
+    color: rgb(60, 54, 46);
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    text-align: center;
+    font-size: 20px;   
+    
+}
+.navbar a:hover{
+    background-color: rgb(197, 189, 150) ;
+    color:rgb(60, 54, 46);
+    text-shadow: 4px 3px 7px rgb(191, 182, 136);
+    box-shadow: 4px 3px 5px rgb(101, 98, 80);
+}
+.navbar li{
+    float: left;    
+}
+#titelIndex{
+    color: var(--clr-dark);
+}
+.tekst{
+    background-color:var(--clr-darkest);
+    opacity: 70%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    left: 2rem;
+}
