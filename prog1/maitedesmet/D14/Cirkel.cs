@@ -1,0 +1,26 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace D14
+{
+    internal class Cirkel
+    {
+        public double Straal { get; set; }
+
+        public double Oppervlakte()
+        {
+            double oppervlakte = Straal * Straal * Math.PI;
+            return oppervlakte;
+        }
+
+        public double Omtrek()
+        {
+            double omtrek = Straal * 2 * Math.PI;
+            return omtrek;
+        }
+
+    }
+}

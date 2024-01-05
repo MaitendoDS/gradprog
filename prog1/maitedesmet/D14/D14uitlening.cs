@@ -1,0 +1,43 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace D14
+{
+    class D14uitlening
+    {
+        class Uitlening
+        {
+
+            private string _omschrijving;
+            public void SetOmschrijving(string omschrijving)
+            {
+                _omschrijving = omschrijving;
+            }
+            public string GetOmschrijving()
+            {
+                return _omschrijving;
+            }
+
+            private DateTime _ontleenDatum;
+            public void SetOntleendatum(DateTime datum)
+            {
+                _ontleenDatum = datum;
+            }
+            public DateTime GetOntleendatum()
+            {
+                return _ontleenDatum;
+            }
+
+            public DateTime UitersteInleverdatum()
+            {
+                return GetOntleendatum().AddDays(14);
+            }
+
+        }
+
+    }
+}
+}
