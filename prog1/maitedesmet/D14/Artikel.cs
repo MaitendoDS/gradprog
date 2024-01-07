@@ -8,13 +8,13 @@ namespace D14
 {
     internal class Artikel
     {
-        public double BTW { get; set; } = 21;
+        public decimal BTW { get; set; } = 21;
 
-        public double Prijs { get; set; }
+        public decimal Prijs { get; set; }
 
-        public double PrijsIncl()
+        public decimal PrijsIncl()
         {
-           double prijsIncl= (Prijs / 100 * BTW) + Prijs;
+           decimal prijsIncl= (Prijs / 100 * BTW) + Prijs;
             return prijsIncl;
         }
     }

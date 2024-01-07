@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace D14
+namespace D15
 {
-    internal class D14artikel
+    internal class D15artikel
     {
         static void Main(string[] args)
         {
-            Artikel artikel = new Artikel();
+            Artikelmetprijs artikel = new Artikelmetprijs(69);
             Console.WriteLine(artikel.BTW);
 
             artikel.BTW = 8;
@@ -21,5 +21,8 @@ namespace D14
 
             Console.WriteLine(artikel.PrijsIncl());
         }
+
+
+
     }
 }

@@ -16,7 +16,7 @@ namespace D14
 
                 decimal bedrag = 100m;
 
-                ...SchrijfOver...  
+                b1.SchrijfOver(b1,b2,bedrag);
 
             Console.WriteLine(b1.Saldo() == -100m); // zou true moeten geven
                 Console.WriteLine(b2.Saldo() == 100m);  // zou true moeten geven

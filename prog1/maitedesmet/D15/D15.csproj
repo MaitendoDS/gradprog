@@ -5,7 +5,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>D14.D14bankrekening</StartupObject>
+    <StartupObject>D15.D15rekeningkantoor.D15rekeningkantoor</StartupObject>
   </PropertyGroup>
 
 </Project>

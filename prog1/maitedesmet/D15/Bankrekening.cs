@@ -4,29 +4,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace D14
+namespace D15
 {
-    class Bankrekening
+    internal class Bankrekening
     {
-        private decimal _saldo;
+        public decimal Saldo { get; private set; }
+        
         public void Stort(decimal bedrag)
         {
-            _saldo = _saldo + bedrag;
+            Saldo = Saldo + bedrag;
         }
         public void HaalAf(decimal bedrag)
         {
-            _saldo = _saldo - bedrag;
+            Saldo = Saldo - bedrag;
         }
-        public decimal Saldo()
-        {
-            return _saldo;
-        }
-   
+       
+
         public void SchrijfOver(Bankrekening b1, Bankrekening b2, decimal bedrag)
         {
             b1.HaalAf(bedrag);
             b2.Stort(bedrag);
-            
+
         }
     }
 }

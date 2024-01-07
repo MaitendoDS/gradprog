@@ -4,11 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace D14
+namespace D15
 {
-    public class Cirkel
+    class Immutablecirkel
     {
-        public double Straal { get; set; }
+        public Immutablecirkel(double straal)
+        {
+            this.Straal = straal;
+        }
+
+        public double Straal { get; }
 
         public double Oppervlakte()
         {
@@ -21,6 +26,5 @@ namespace D14
             double omtrek = Straal * 2 * Math.PI;
             return omtrek;
         }
-
     }
 }

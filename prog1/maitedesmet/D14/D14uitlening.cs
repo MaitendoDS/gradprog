@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace D14
 {
-    class D14uitlening
-    {
+    
         class Uitlening
         {
 
@@ -39,5 +38,5 @@ namespace D14
         }
 
     }
-}
-}
+
+
