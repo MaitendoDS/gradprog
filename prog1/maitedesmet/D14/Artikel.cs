@@ -17,5 +17,6 @@ namespace D14
            decimal prijsIncl= (Prijs / 100 * BTW) + Prijs;
             return prijsIncl;
         }
+
     }
 }

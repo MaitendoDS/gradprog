@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../AnalyseUI/Analyse"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "../Web oefeningen"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Website Dijkhuisje"
+	}
+}

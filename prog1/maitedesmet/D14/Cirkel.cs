@@ -21,6 +21,6 @@ namespace D14
             double omtrek = Straal * 2 * Math.PI;
             return omtrek;
         }
-
+            
     }
 }
