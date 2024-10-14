@@ -2,8 +2,8 @@
     --clr-darkestest: rgb(188, 116, 53);
     --clr-darkest: rgb(206, 148, 97);
     --clr-dark: rgb(222, 160, 87);
-    --clr-light: rgb(224, 216, 176);
-    --clr-lightest: rgb(252, 255, 231);
+    --clr-light: rgb(216, 202, 171);
+    --clr-lightest: rgb(216, 202, 171);
 }
 
 @media only screen and (max-width: 700px) {
@@ -97,7 +97,7 @@ body {
 padding: 2%;
 padding-top: 50px;
 padding-bottom: 60px;
-background-color: rgb(252, 255, 231);
+background-color: rgb(216, 202, 171);
 margin-left: 20px;
 margin-right: 20px;
 }
