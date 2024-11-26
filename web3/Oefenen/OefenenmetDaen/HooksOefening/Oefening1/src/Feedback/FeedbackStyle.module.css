@@ -1,0 +1,11 @@
+.goedBtn {
+    background-color: green;
+}
+.neutraalBtn:hover {
+    background-color: yellow;
+}
+
+
+.slechtBtn{
+    background-color: red;
+}

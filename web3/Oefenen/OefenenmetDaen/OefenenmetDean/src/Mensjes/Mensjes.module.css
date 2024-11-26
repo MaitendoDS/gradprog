@@ -1,0 +1,16 @@
+.Mensjes{
+    width: 100px;
+    height: auto;
+    border: black 5px solid;
+    border-radius: 2rem;
+    padding: 10px;
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.Mensjes img{
+    width: 80px;
+    height: auto;
+}

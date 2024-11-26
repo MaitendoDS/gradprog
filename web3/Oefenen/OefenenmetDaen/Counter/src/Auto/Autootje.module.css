@@ -1,0 +1,10 @@
+.autootje {
+    border: 2px solid rgb(74, 129, 109);
+    border-radius: 2rem;
+    padding: 20px;
+    background-color: rgb(122, 202, 172);
+    margin:2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    box-shadow: 3px 5px 5px rgb(42, 66, 57);
+}
