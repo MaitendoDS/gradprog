@@ -1,0 +1,6 @@
+@Eindopdracht_PG2_fitness_HostAddress = http://localhost:5253
+
+GET {{Eindopdracht_PG2_fitness_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
