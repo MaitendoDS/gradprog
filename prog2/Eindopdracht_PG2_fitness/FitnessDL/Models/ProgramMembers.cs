@@ -1,4 +1,4 @@
-﻿namespace Eindopdracht_PG2_fitness.Models
+﻿namespace FitnessDL.Models
 {
     public class ProgramMembers
     {
