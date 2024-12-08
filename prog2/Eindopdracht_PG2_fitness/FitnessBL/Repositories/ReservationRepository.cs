@@ -11,9 +11,9 @@ namespace FitnessBL.Repositories
 
         public class ReservationRepository
         {
-            private readonly FitnessDbContext _context;
+            private readonly FitnessContext _context;
 
-            public ReservationRepository(FitnessDbContext context)
+            public ReservationRepository(FitnessContext context)
             {
                 _context = context;
             }
