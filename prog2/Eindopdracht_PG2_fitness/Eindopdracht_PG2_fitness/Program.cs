@@ -1,6 +1,4 @@
-using FitnessBL;
-using FitnessDL;
-using FitnessDL.Models;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,7 +8,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<FitnessContext>();
+builder.Services.AddDbContext<FitnessDL>();
 
 var app = builder.Build();
 

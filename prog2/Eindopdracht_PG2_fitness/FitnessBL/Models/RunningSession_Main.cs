@@ -11,7 +11,7 @@ namespace FitnessDL.Models
         [Key]
         public int RunningSessionID{ get; set; }
         public DateTime Date { get; set; }
-        public Member MemberID { get; set; }
+        public Members MemberID { get; set; }
         public int Duration { get; set; }
         public float AvgSpeed { get; set; }
     }

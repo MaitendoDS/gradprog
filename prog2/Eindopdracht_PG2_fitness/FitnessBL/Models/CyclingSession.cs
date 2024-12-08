@@ -17,6 +17,6 @@ namespace FitnessDL.Models
         public int MaxCadence { get; set; }
         public string TrainingType { get; set; }
         public string Comment { get; set; }
-        public Member MemberId { get; set; }
+        public Members MemberId { get; set; }
     }
 }
