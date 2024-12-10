@@ -9,25 +9,44 @@ namespace FitnessDL.Models
         {
         }
 
+        public Reservation(int equipmentID, Equipment equipment, int timeSlotID, Time_Slot timeSlot, DateTime date, int memberID, Member member)
+        {
+            EquipmentID = equipmentID;
+            Equipment = equipment;
+            TimeSlotID = timeSlotID;
+            TimeSlot = timeSlot;
+            Date = date;
+            MemberID = memberID;
+            Member = member;
+        }
+
+        public Reservation(int reservationID, int equipmentID, Equipment equipment, int timeSlotID, Time_Slot timeSlot, DateTime date, int memberID, Member member)
+        {
+            ReservationID = reservationID;
+            EquipmentID = equipmentID;
+            Equipment = equipment;
+            TimeSlotID = timeSlotID;
+            TimeSlot = timeSlot;
+            Date = date;
+            MemberID = memberID;
+            Member = member;
+        }
+
         [Key]
         public int ReservationID { get; set; }
 
-        [Required]
-        public int EquipmentID { get; set; } // foreign key
-        [ForeignKey("EquipmentID")]
-        public Equipment Equipment { get; set; } // navigation property
+        public int EquipmentID { get; set; }
 
-        [Required]
-        public int TimeSlotID { get; set; } // foreign key
-        [ForeignKey("TimeSlotID")]
-        public Time_Slot TimeSlot { get; set; } //NAvigation property
+        public Equipment Equipment { get; set; }
 
-        [Required]
+        public int TimeSlotID { get; set; }
+
+        public Time_Slot TimeSlot { get; set; }
+
         public DateTime Date { get; set; }
 
-        [Required]
-        public int MemberID { get; set; } //foreign key
-        [ForeignKey("MemberID")]
-        public Member Member { get; set; } // navigation property
+        public int MemberID { get; set; }
+
+        public Member Member { get; set; }
     }
 }

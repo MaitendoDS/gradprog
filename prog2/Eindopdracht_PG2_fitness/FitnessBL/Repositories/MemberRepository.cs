@@ -18,27 +18,27 @@ namespace FitnessBL.Repositories
             _context = context;
         }
 
-        // Create
+      
         public async Task AddMember(Member member)
         {
             _context.Members.Add(member);
             await _context.SaveChangesAsync();
         }
 
-        // Read
+      
         public async Task<Member> GetMember(int id)
         {
             return await _context.Members.FindAsync(id);
         }
 
-        // Update
+        
         public async Task UpdateMember(Member member)
         {
             _context.Members.Update(member);
             await _context.SaveChangesAsync();
         }
 
-        // Delete
+       
         public async Task DeleteMember(int id)
         {
             var member = await _context.Members.FindAsync(id);

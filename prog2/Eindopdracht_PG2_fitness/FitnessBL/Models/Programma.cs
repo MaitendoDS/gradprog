@@ -8,6 +8,15 @@ namespace FitnessDL.Models
         {
         }
 
+        public Programma(string programCode, string name, string target, DateTime startDate, int maxMembers)
+        {
+            ProgramCode = programCode;
+            Name = name;
+            Target = target;
+            StartDate = startDate;
+            MaxMembers = maxMembers;
+        }
+
         [Key]
         public string ProgramCode { get; set; }
         public string Name { get; set; }

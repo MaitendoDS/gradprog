@@ -2,13 +2,19 @@
 
 namespace FitnessDL.Models
 {
-    public class ProgramMembers
+    public class ProgramMember
     {
-        public ProgramMembers()
+        public ProgramMember()
         {
         }
 
+        public ProgramMember(Programma programCode, Member memberID)
+        {
+            ProgramCode = programCode;
+            MemberID = memberID;
+        }
+
         public Programma ProgramCode { get; set; }
-        public Members MemberID { get; set; }
+        public Member MemberID { get; set; }
     }
 }
