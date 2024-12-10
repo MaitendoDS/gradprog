@@ -2,13 +2,13 @@
 
 namespace FitnessDL.Models
 {
-    public class Programma
+    public class ProgrammaEF
     {
-        public Programma()
+        public ProgrammaEF()
         {
         }
 
-        public Programma(string programCode, string name, string target, DateTime startDate, int maxMembers)
+        public ProgrammaEF(string programCode, string name, string target, DateTime startDate, int maxMembers)
         {
             ProgramCode = programCode;
             Name = name;
@@ -23,5 +23,7 @@ namespace FitnessDL.Models
         public string Target { get; set; }
         public DateTime StartDate { get; set; }
         public int MaxMembers { get; set; }
+
+        public ICollection<MemberEF> Members { get; set; }
     }
 }

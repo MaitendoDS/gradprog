@@ -14,14 +14,14 @@ namespace FitnessDL
     public class FitnessContext: DbContext
     {
 
-        public DbSet<CyclingSession> CyclingSession { get; set; }
-        public DbSet<Equipment> Equipment { get; set; }
-        public DbSet<Member> Members { get; set; }
-        public DbSet<Programma> Programma { get; set; }
-        public DbSet<Reservation> Reservations { get; set; }
-        public DbSet<RunningSession_Detail> Runningsession_Detail { get; set; }
-        public DbSet<RunningSession_Main> Runningsession_Main { get; set; }
-        public DbSet<Time_Slot> Time_Slot { get; set; }
+        public DbSet<CyclingSessionEF> CyclingSession { get; set; }
+        public DbSet<EquipmentEF> Equipment { get; set; }
+        public DbSet<MemberEF> Members { get; set; }
+        public DbSet<ProgrammaEF> Programma { get; set; }
+        public DbSet<ReservationEF> Reservations { get; set; }
+        public DbSet<RunningSession_DetailEF> Runningsession_Detail { get; set; }
+        public DbSet<RunningSession_MainEF> Runningsession_Main { get; set; }
+        public DbSet<Time_SlotEF> Time_Slot { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -30,7 +30,7 @@ namespace FitnessDL
       
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source = HP - MAITE\SQLEXPRESS; Initial Catalog = Gym; Integrated Security = True; Encrypt = True; Trust Server Certificate = True");
+            optionsBuilder.UseSqlServer(@"Data Source=HP-MAITE\SQLEXPRESS;Initial Catalog=Gym;Integrated Security=True;Encrypt=True;Trust Server Certificate=True");
            
         }
     }

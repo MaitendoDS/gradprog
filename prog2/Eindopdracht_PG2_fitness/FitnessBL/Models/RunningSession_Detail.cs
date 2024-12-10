@@ -1,4 +1,4 @@
-﻿namespace FitnessDL.Models
+﻿namespace FitnessBL.Models
 {
     public class RunningSession_Detail
     {

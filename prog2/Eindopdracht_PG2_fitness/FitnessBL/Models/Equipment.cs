@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace FitnessDL.Models
+namespace FitnessBL.Models
 {
     public class Equipment
     {
@@ -8,18 +8,15 @@ namespace FitnessDL.Models
         {
         }
 
-        public Equipment(string deviceType)
-        {
-            DeviceType = deviceType;
-        }
-
-        public Equipment(int equipmentID, string deviceType)
+        public Equipment(int equipmentID, string deviceType, bool inRepair)
         {
             EquipmentID = equipmentID;
             DeviceType = deviceType;
+            InRepair = inRepair;
         }
 
         public int EquipmentID { get; set; }
         public string DeviceType { get; set; }
+        public bool InRepair { get; set; }
     }
 }

@@ -2,24 +2,24 @@
 
 namespace FitnessDL.Models
 {
-    public class Equipment
+    public class EquipmentEF
     {
-        public Equipment()
+        public EquipmentEF()
         {
         }
 
-        public Equipment(string deviceType)
-        {
-            DeviceType = deviceType;
-        }
-
-        public Equipment(int equipmentID, string deviceType)
+        public EquipmentEF(int equipmentID, string deviceType, bool inRepair)
         {
             EquipmentID = equipmentID;
             DeviceType = deviceType;
+            InRepair = inRepair;
         }
 
+        [Key]
         public int EquipmentID { get; set; }
         public string DeviceType { get; set; }
+        public bool InRepair { get; set; }
+
+        public ICollection<ReservationEF> Reservations { get; set; }
     }
 }

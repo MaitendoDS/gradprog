@@ -1,15 +1,15 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace FitnessBL.Models
+namespace FitnessDL.Models
 {
-    public class Reservation
+    public class ReservationEF
     {
-        public Reservation()
+        public ReservationEF()
         {
         }
 
-        public Reservation(int reservationID, int equipmentID, int timeSlotID, DateTime date, int memberID, Equipment equipment, Time_Slot timeSlot)
+        public ReservationEF(int reservationID, int equipmentID, int timeSlotID, DateTime date, int memberID, EquipmentEF equipment, Time_SlotEF timeSlot)
         {
             ReservationID = reservationID;
             EquipmentID = equipmentID;
@@ -20,14 +20,15 @@ namespace FitnessBL.Models
             TimeSlot = timeSlot;
         }
 
+        [Key]
         public int ReservationID { get; set; }
         public int EquipmentID { get; set; }
         public int TimeSlotID { get; set; }
         public DateTime Date { get; set; }
         public int MemberID { get; set; }
 
-        public Equipment Equipment { get; set; }
-        public Time_Slot TimeSlot { get; set; }
-  
+        public MemberEF Member { get; set; }
+        public EquipmentEF Equipment { get; set; }
+        public Time_SlotEF TimeSlot { get; set; }
     }
 }

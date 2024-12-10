@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace FitnessDL.Models
+namespace FitnessBL.Models
 {
     public class Programma
     {
@@ -17,7 +17,6 @@ namespace FitnessDL.Models
             MaxMembers = maxMembers;
         }
 
-        [Key]
         public string ProgramCode { get; set; }
         public string Name { get; set; }
         public string Target { get; set; }

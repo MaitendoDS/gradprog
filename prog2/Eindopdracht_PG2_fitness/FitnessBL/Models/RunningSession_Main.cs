@@ -1,6 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿
+using System.ComponentModel.DataAnnotations;
 
-namespace FitnessDL.Models
+namespace FitnessBL.Models
 {
     public class RunningSession_Main
     {
@@ -8,28 +9,22 @@ namespace FitnessDL.Models
         {
         }
 
-        public RunningSession_Main(DateTime date, Member memberID, int duration, float avgSpeed)
-        {
-            Date = date;
-            MemberID = memberID;
-            Duration = duration;
-            AvgSpeed = avgSpeed;
-        }
-
-        public RunningSession_Main(int runningSessionID, DateTime date, Member memberID, int duration, float avgSpeed)
+        public RunningSession_Main(int runningSessionID, DateTime date, int memberID, TimeSpan duration, float avgSpeed, ICollection<RunningSession_Detail> runningSession_Details)
         {
             RunningSessionID = runningSessionID;
             Date = date;
             MemberID = memberID;
             Duration = duration;
             AvgSpeed = avgSpeed;
+            RunningSession_Details = runningSession_Details;
         }
 
-        [Key]
         public int RunningSessionID{ get; set; }
         public DateTime Date { get; set; }
-        public Member MemberID { get; set; }
-        public int Duration { get; set; }
+        public int MemberID { get; set; }
+        public TimeSpan Duration { get; set; }
         public float AvgSpeed { get; set; }
+
+        public ICollection<RunningSession_Detail> RunningSession_Details { get; set; }
     }
 }

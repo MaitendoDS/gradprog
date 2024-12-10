@@ -1,12 +1,14 @@
-﻿namespace FitnessBL.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace FitnessDL.Models
 {
-    public class Time_Slot
+    public class Time_SlotEF
     {
-        public Time_Slot()
+        public Time_SlotEF()
         {
         }
 
-        public Time_Slot(int timeSlotID, TimeSpan startTime, TimeSpan endTime, string partOfDay)
+        public Time_SlotEF(int timeSlotID, TimeSpan startTime, TimeSpan endTime, string partOfDay)
         {
             TimeSlotID = timeSlotID;
             StartTime = startTime;
@@ -14,9 +16,12 @@
             PartOfDay = partOfDay;
         }
 
+        [Key]
         public int TimeSlotID { get; set; }
         public TimeSpan StartTime { get; set; }
         public TimeSpan EndTime { get; set; }
         public string PartOfDay { get; set; }
+
+        public ICollection<ReservationEF> Reservations { get; set; }
     }
 }
