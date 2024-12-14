@@ -20,7 +20,7 @@ namespace FitnessDL.Mappers
                     dl.MemberID,
                     dl.Duration,
                     dl.AvgSpeed,
-                    dl.RunningSession_Details?.Select(MapRunningSessionDetail.MapToBL).ToList() ?? new List<RunningSession_Detail>()
+                    dl.RunningSession_Details != null ? MapRunningSessionDetail.MapToBL(dl.RunningSession_Details) : new RunningSession_Detail()
 
                     );
             }
@@ -43,7 +43,7 @@ namespace FitnessDL.Mappers
                     bl.MemberID,
                     bl.Duration,
                     bl.AvgSpeed,
-                    bl.RunningSession_Details?.Select(MapRunningSessionDetail.MapToDL).ToList() ?? new List<RunningSession_DetailEF>()
+                    bl.RunningSession_Details != null ? MapRunningSessionDetail.MapToDL(bl.RunningSession_Details) : new RunningSession_DetailEF()
 
 
                     );

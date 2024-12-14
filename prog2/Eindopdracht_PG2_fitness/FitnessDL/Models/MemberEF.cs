@@ -35,7 +35,7 @@ namespace FitnessDL.Models
         public List<string?> Interests { get; set; }
         public string MemberType { get; set; }
 
-        public ICollection<RunningSession_MainEF> RunningSessions { get; set; }
+        public ICollection<RunningSession_MainEF> RunningSessions { get; set; } //nav props
         public ICollection<ReservationEF> Reservations { get; set; }
         public ICollection<ProgrammaEF> Programmas { get; set; }
         public ICollection<CyclingSessionEF> CyclingSessions { get; set;}

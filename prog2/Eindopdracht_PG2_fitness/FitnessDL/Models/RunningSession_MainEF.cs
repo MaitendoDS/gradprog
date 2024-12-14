@@ -8,7 +8,7 @@ namespace FitnessDL.Models
         {
         }
 
-        public RunningSession_MainEF(int runningSessionID, DateTime date, int memberId, TimeSpan duration, float avgSpeed, ICollection<RunningSession_DetailEF> runningSession_Details)
+        public RunningSession_MainEF(int runningSessionID, DateTime date, int memberId, TimeSpan duration, float avgSpeed, RunningSession_DetailEF runningSession_Details)
         {
             RunningSessionID = runningSessionID;
             Date = date;
@@ -27,6 +27,6 @@ namespace FitnessDL.Models
 
         public MemberEF Member { get; set; }
 
-        public ICollection<RunningSession_DetailEF> RunningSession_Details { get; set; }
+        public RunningSession_DetailEF RunningSession_Details { get; set; }
     }
 }

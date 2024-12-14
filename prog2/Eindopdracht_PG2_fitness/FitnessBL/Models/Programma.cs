@@ -8,7 +8,7 @@ namespace FitnessBL.Models
         {
         }
 
-        public Programma(string programCode, string name, string target, DateTime startDate, int maxMembers)
+        public Programma(int programCode, string name, string target, DateTime startDate, int maxMembers)
         {
             ProgramCode = programCode;
             Name = name;
@@ -17,7 +17,7 @@ namespace FitnessBL.Models
             MaxMembers = maxMembers;
         }
 
-        public string ProgramCode { get; set; }
+        public int ProgramCode { get; set; }
         public string Name { get; set; }
         public string Target { get; set; }
         public DateTime StartDate { get; set; }

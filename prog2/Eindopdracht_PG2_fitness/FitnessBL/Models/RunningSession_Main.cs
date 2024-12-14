@@ -9,7 +9,7 @@ namespace FitnessBL.Models
         {
         }
 
-        public RunningSession_Main(int runningSessionID, DateTime date, int memberID, TimeSpan duration, float avgSpeed, ICollection<RunningSession_Detail> runningSession_Details)
+        public RunningSession_Main(int runningSessionID, DateTime date, int memberID, TimeSpan duration, float avgSpeed,RunningSession_Detail runningSession_Details)
         {
             RunningSessionID = runningSessionID;
             Date = date;
@@ -25,6 +25,6 @@ namespace FitnessBL.Models
         public TimeSpan Duration { get; set; }
         public float AvgSpeed { get; set; }
 
-        public ICollection<RunningSession_Detail> RunningSession_Details { get; set; }
+        public RunningSession_Detail RunningSession_Details { get; set; }
     }
 }

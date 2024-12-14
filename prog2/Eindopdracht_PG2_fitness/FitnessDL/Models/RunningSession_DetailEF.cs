@@ -21,7 +21,7 @@ namespace FitnessDL.Models
         public int SeqNr { get; set; }
         public int IntervalTime { get; set; }
         public float IntervalSpeed { get; set; }
+        
 
-        public RunningSession_MainEF RunningSession_Main { get; set; }
     }
 }

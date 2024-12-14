@@ -54,16 +54,12 @@ namespace FitnessDL.Repositories
 
             try
             {
-
                 return _context.Members
                     .Include(m => m.CyclingSessions)
                     .Include(m => m.Programmas)
                     .Include(m => m.RunningSessions)
                     .Include(m => m.Reservations)
-                    .Select(m => MapMember.MapToBL(m)).ToList();
-
-
-                
+                    .Select(m => MapMember.MapToBL(m)).ToList();                
             }
             catch (Exception x)
             {
@@ -100,7 +96,7 @@ namespace FitnessDL.Repositories
 
                 if (memberEF != null)
                 {
-                    _context.Entry(memberEF).CurrentValues.SetValues(MapMember.MapToDL(member));
+                    _context.Entry(memberEF).CurrentValues.SetValues(MapMember.MapToDL(member)); // entry is heel het rijtje in db
                     _context.SaveChanges();
 
                     return MapMember.MapToBL(memberEF);

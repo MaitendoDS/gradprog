@@ -15,7 +15,20 @@ public class Program
 
         builder.Services.AddScoped<IMemberRepository, MemberRepository>();
         builder.Services.AddScoped<MemberService>();
-       
+
+        builder.Services.AddScoped<IProgrammaRepository, ProgrammaRepository>();
+        builder.Services.AddScoped<ProgrammaService>();
+
+        builder.Services.AddScoped<IEquipmentRepository, EquipmentRepository>();
+        builder.Services.AddScoped<EquipmentService>();
+
+
+        builder.Services.AddScoped<IRunningSessionRepository, RunningSessionRepository>();
+        builder.Services.AddScoped<RunningSessionService>();
+
+        builder.Services.AddScoped<IReservationRepository, ReservationRepository>();
+        builder.Services.AddScoped<ReservationService>();
+
 
 
         // Voeg hier de JsonOptions toe om circulaire referenties te ondersteunen
