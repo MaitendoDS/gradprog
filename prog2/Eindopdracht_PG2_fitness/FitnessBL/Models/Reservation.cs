@@ -9,6 +9,15 @@ namespace FitnessBL.Models
         {
         }
 
+        public Reservation(int reservationID, int equipmentID, int timeSlotID, DateTime date, int memberID)
+        {
+            ReservationID = reservationID;
+            EquipmentID = equipmentID;
+            TimeSlotID = timeSlotID;
+            Date = date;
+            MemberID = memberID;
+        }
+
         public Reservation(int reservationID, int equipmentID, int timeSlotID, DateTime date, int memberID, Equipment equipment, Time_Slot timeSlot)
         {
             ReservationID = reservationID;

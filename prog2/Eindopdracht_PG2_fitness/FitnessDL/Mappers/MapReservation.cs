@@ -19,9 +19,7 @@ namespace FitnessDL.Mappers
                 dl.EquipmentID,
                 dl.TimeSlotID,
                 dl.Date,
-                dl.MemberID,
-                dl.Equipment != null ? MapEquipment.MapToBL(dl.Equipment) : new Equipment(),
-                dl.TimeSlot != null ? MapTimeSlot.MapToBL(dl.TimeSlot) : new Time_Slot()
+                dl.MemberID
                 );
         }
         catch (Exception x)
@@ -29,7 +27,6 @@ namespace FitnessDL.Mappers
 
             throw new Exception("MapReservation-MapToBL", x);
         }
-
 
       }
 
@@ -42,10 +39,7 @@ namespace FitnessDL.Mappers
                     bl.EquipmentID,
                     bl.TimeSlotID,
                     bl.Date,
-                    bl.MemberID,
-                    bl.Equipment != null ? MapEquipment.MapToDL(bl.Equipment) : new EquipmentEF(),
-                    bl.TimeSlot != null ? MapTimeSlot.MapToDL(bl.TimeSlot): new Time_SlotEF()
-                    
+                    bl.MemberID       
                     );
             }
             catch (Exception x)
@@ -53,8 +47,6 @@ namespace FitnessDL.Mappers
 
                 throw new Exception("MapReservation-MapToDL", x);
             }
-
-
         }
     }
 }

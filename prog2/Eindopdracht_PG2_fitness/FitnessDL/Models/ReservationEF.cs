@@ -9,6 +9,15 @@ namespace FitnessDL.Models
         {
         }
 
+        public ReservationEF(int reservationID, int equipmentID, int timeSlotID, DateTime date, int memberID)
+        {
+            ReservationID = reservationID;
+            EquipmentID = equipmentID;
+            TimeSlotID = timeSlotID;
+            Date = date;
+            MemberID = memberID;
+        }
+
         public ReservationEF(int reservationID, int equipmentID, int timeSlotID, DateTime date, int memberID, EquipmentEF equipment, Time_SlotEF timeSlot)
         {
             ReservationID = reservationID;
