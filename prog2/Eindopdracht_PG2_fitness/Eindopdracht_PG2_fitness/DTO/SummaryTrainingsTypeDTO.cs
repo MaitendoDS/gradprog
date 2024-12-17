@@ -7,6 +7,14 @@
 
         public string Month { get; set; }
 
+        public int FunTypeCounter { get; set; }
+        public int EnduranceTypeCounter { get; set; }
+        public int IntervalTypeCounter { get; set; }
+        public int RecoveryTypeCounter { get; set; }
+
+
+
+
 
     }
 }

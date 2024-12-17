@@ -63,7 +63,7 @@ namespace Eindopdracht_PG2_fitness.Controllers
             List<RunningSession_Main> runningSessions = (List<RunningSession_Main>)member.RunningSessions;
 
             long totalTicks = 0;
-            
+
 
             sessionDetailsDTO.SessionsCount = member.RunningSessions.Count + member.CyclingSessions.Count;
 
@@ -152,20 +152,55 @@ namespace Eindopdracht_PG2_fitness.Controllers
 
             Member member = _memberService.GetMember(id);
 
-            List<SummaryTrainingsTypeDTO> summaryList = new List<SummaryTrainingsTypeDTO>();
+            List<SummaryTrainingsTypeDTO> summaryTrainingsTypeList = new List<SummaryTrainingsTypeDTO>();
+
+            List<CyclingSession> cyclingSessions = (List<CyclingSession>)member.CyclingSessions;
+
 
             for (int i = 1; i <= 12; i++)
             {
                 SummaryTrainingsTypeDTO summaryTrainingsTypeDTO = new SummaryTrainingsTypeDTO();
-
                 summaryTrainingsTypeDTO.RunningSessionsCount = member.RunningSessions.Where(s => s.Date.Month == i && s.Date.Year == year).Count();
                 summaryTrainingsTypeDTO.CyclingSessionsCount = member.CyclingSessions.Where(s => s.Date.Month == i && s.Date.Year == year).Count();
 
+                int funCounter = 0;
+                int enduranceCounter = 0;
+                int intervalCounter = 0;
+                int recoveryCounter = 0;
+
+                for (int j = 0; j < cyclingSessions.Count; j++)
+                {
+                    if (cyclingSessions[j].Date.Month == i && cyclingSessions[j].Date.Year == year)
+                    {
+
+                        if (cyclingSessions[j].TrainingType.ToLower() == "fun")
+                        {
+                            funCounter++;
+
+                        }
+                        else if (cyclingSessions[j].TrainingType.ToLower() == "endurance")
+                        {
+                            enduranceCounter++;
+                        }
+                        else if (cyclingSessions[j].TrainingType.ToLower() == "interval")
+                        {
+                            intervalCounter++;
+                        }
+                        else if (cyclingSessions[j].TrainingType.ToLower() == "recovery")
+                        {
+                            recoveryCounter++;
+                        }
+                    }
+                }
+                summaryTrainingsTypeDTO.FunTypeCounter = funCounter;
+                summaryTrainingsTypeDTO.EnduranceTypeCounter = enduranceCounter;
+                summaryTrainingsTypeDTO.IntervalTypeCounter = intervalCounter;
+                summaryTrainingsTypeDTO.RecoveryTypeCounter = recoveryCounter;
 
                 summaryTrainingsTypeDTO.Month = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(i);
-                summaryList.Add(summaryTrainingsTypeDTO);
+                summaryTrainingsTypeList.Add(summaryTrainingsTypeDTO);
             }
-            return summaryList;
+            return summaryTrainingsTypeList;
 
         }
 
