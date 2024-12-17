@@ -50,6 +50,19 @@ namespace FitnessDL.Repositories
                     equipmentUpdated.InRepair = !equipmentEF.InRepair;
 
 
+
+
+                    if (equipmentUpdated.InRepair == true)
+                    {
+                        List<ReservationEF> reservations = new();
+
+                        reservations = _context.Reservations.Where(r => r.EquipmentID == equipmentUpdated.EquipmentID).ToList();
+
+                        _context.Reservations.RemoveRange(reservations); // range is om meerdere te verwijderen
+
+                    }
+
+
                     _context.Entry(equipmentEF).CurrentValues.SetValues(equipmentUpdated); // entry is heel het rijtje in db
                     _context.SaveChanges();
 
@@ -60,6 +73,8 @@ namespace FitnessDL.Repositories
                 {
                     throw new Exception("Equipment niet gevonden");
                 }
+
+
 
 
             }
