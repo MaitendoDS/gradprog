@@ -8,8 +8,17 @@ public class Program
 {
     public static void Main(string[] args)
     {
+     
         var builder = WebApplication.CreateBuilder(args);
-
+        builder.Services.AddCors(options =>
+        {
+            options.AddPolicy("AllowReactApp", policy =>
+            {
+                policy.AllowAnyOrigin()
+                      .AllowAnyMethod()
+                      .AllowAnyHeader();
+            });
+        });
 
         builder.Services.AddDbContext<FitnessContext>();
 

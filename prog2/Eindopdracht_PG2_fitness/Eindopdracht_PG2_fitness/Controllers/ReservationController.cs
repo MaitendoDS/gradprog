@@ -19,7 +19,7 @@ namespace Eindopdracht_PG2_fitness.Controllers
 
         }
 
-        [Route("Add Reservation")]
+        [Route("AddReservation")]
         [HttpPost]
 
         public Reservation Add([FromBody] ReservationDTO reservationDTO)
@@ -34,7 +34,7 @@ namespace Eindopdracht_PG2_fitness.Controllers
             return _reservationService.Add(reservation);
         }
 
-        [Route("Update Reservation")]
+        [Route("UpdateReservation")]
         [HttpPut]
 
         public Reservation Update(int id, [FromBody] ReservationDTO reservationDTO)

@@ -2,6 +2,7 @@
 using FitnessBL.Models;
 using FitnessDL.Mappers;
 using FitnessDL.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,26 @@ namespace FitnessDL.Repositories
         {
             _context = context;
         }
+
+
+
+        public List<Equipment> GetAll() {
+
+            try
+            {
+                return _context.Equipment.Where(e=> e.InRepair == false).Select(e => MapEquipment.MapToBL(e)).ToList();
+            }
+            catch (Exception x)
+            {
+
+                throw new Exception("EquipmentRepository-GetAll", x);
+            }
+        
+        
+        
+        
+        }
+
 
         public Equipment Add(Equipment equipment)
         {

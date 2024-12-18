@@ -5,9 +5,9 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eindopdracht_PG2_fitness", "Eindopdracht_PG2_fitness\Eindopdracht_PG2_fitness.csproj", "{860A3344-8506-4A35-B13B-6153D24ABBCB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitnessDL", "FitnessDL\FitnessDL.csproj", "{DAB1EEEB-B084-47C9-A844-588B609E2A26}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FitnessDL", "FitnessDL\FitnessDL.csproj", "{DAB1EEEB-B084-47C9-A844-588B609E2A26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitnessBL", "FitnessBL\FitnessBL.csproj", "{A90B015B-F1BC-4B99-B7CD-73378F2547C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FitnessBL", "FitnessBL\FitnessBL.csproj", "{A90B015B-F1BC-4B99-B7CD-73378F2547C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

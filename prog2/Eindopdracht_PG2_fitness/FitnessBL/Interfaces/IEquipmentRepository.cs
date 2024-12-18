@@ -11,7 +11,7 @@ namespace FitnessBL.Interfaces
     {
         public Equipment Add(Equipment equipment);
         public Equipment Repairing(int id);
-
+        public List<Equipment> GetAll();
 
 
     }

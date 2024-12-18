@@ -18,6 +18,23 @@ namespace FitnessBL.Services
             _equipmentRepository = equipmentRepository;
         }
 
+
+        public List<Equipment> GetAll() {
+
+            try
+            {
+                return _equipmentRepository.GetAll();
+            }
+            catch (Exception x)
+            {
+
+                throw new Exception("EquipmentService-GetAll", x);
+            }
+        }
+
+
+
+
         public Equipment Add(Equipment equipment)
         {
 
