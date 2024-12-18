@@ -1,0 +1,17 @@
+Bij deze opdracht is het de bedoeling om beginnersfouten te leren oplossen.
+
+Gegeven is een programma dat werkt (in folder "bughunt-alles-correct"), je kan dit eens uitproberen in de browser om te zien hoe het werkt.
+
+Je krijgt een heleboel folders met het woordje "fout" in de naam (bv. folder "bughunt-fout-07"). Daarin staat telkens hetzelfde programma waarin +- 1 ding gewijzigd werd waardoor het programma niet meer werkt. Je zult normaliter geen foutmelding krijgen op de console, het is niet "dat soort" fout.
+
+Het is de bedoeling dat je voor elke genummerde folder :
+a) de fout opspoort en oplost
+b) VOOR JEZELF DOCUMENTEERT HOE JE (een volgende keer) DE FOUT RAP KAN VINDEN
+
+Je zult wellicht niet telkens direct de beste manier gebruiken om de fout op te sporen, wellicht ga je meerdere dingen checken en testen.
+
+Maar eenmaal je de fout gevonden hebt, noteer dat wat jij denkt dat de rapste manier is om zo'n fout te vinden in een toekomstige vergelijkbare situatie.
+
+De meeste van deze fouten staan beschreven in de cursus als "Tip van Flip" (Flip is de papegaai uit Jommeke trouwens).
+
+Normaliter kun je deze opdracht maken na "Javascript deel 03", maar in deel 04 staat iets over debuggen dat kan helpen bij het inspecteren van de waarden van sommige variabelen. Je kan dit ook checken met wat extra console.log opdracht die de waarden tonen op de console, dus het kan al vanaf deel 03.

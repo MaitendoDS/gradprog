@@ -1,0 +1,21 @@
+.tafel {
+  margin: 10px;
+  display:inline-block;
+  border: solid 1px #122b40;
+}
+
+.tafel p, .tafel h1 {
+  margin:0;
+  padding:10px;
+}
+
+.tafel p:nth-of-type(odd) {
+  background-color: #d3d3d3;
+}
+.titel{
+  background-color:  #122b40;
+  padding: 10px;
+  margin: 0px;
+  color: white;
+}
+  
