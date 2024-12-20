@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StripsDL", "Strips\StripsDL.csproj", "{F7EBAD73-1F0A-4981-9690-CF35C0310E65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StripsBL", "StripsBL\StripsBL.csproj", "{296F0AA7-974D-4372-913A-E319CF2D7278}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F7EBAD73-1F0A-4981-9690-CF35C0310E65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7EBAD73-1F0A-4981-9690-CF35C0310E65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7EBAD73-1F0A-4981-9690-CF35C0310E65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7EBAD73-1F0A-4981-9690-CF35C0310E65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{296F0AA7-974D-4372-913A-E319CF2D7278}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{296F0AA7-974D-4372-913A-E319CF2D7278}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{296F0AA7-974D-4372-913A-E319CF2D7278}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{296F0AA7-974D-4372-913A-E319CF2D7278}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {346C27AF-7CB3-43FB-9DB2-2C793D77104A}
+	EndGlobalSection
+EndGlobal
