@@ -13,7 +13,12 @@ namespace StripsDL.Models
         {
         }
 
-        public UitgeverijEF(int uitgeverijID, string naam, string adres)
+        public UitgeverijEF(string naam)
+        {
+            Naam = naam;
+        }
+
+        public UitgeverijEF(int uitgeverijID, string naam, string? adres)
         {
             UitgeverijID = uitgeverijID;
             Naam = naam;
@@ -23,7 +28,7 @@ namespace StripsDL.Models
         [Key]
         public int UitgeverijID { get; set; }
         public string Naam { get; set; }
-        public string Adres { get; set; }
+        public string? Adres { get; set; }
 
 
         public List<StripEF> Strips { get; set; }

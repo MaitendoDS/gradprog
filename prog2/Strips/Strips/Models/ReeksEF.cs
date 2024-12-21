@@ -13,6 +13,11 @@ namespace StripsDL.Models
         {
         }
 
+        public ReeksEF(string reeksNaam)
+        {
+            ReeksNaam = reeksNaam;
+        }
+
         public ReeksEF(int reeksID, string reeksNaam, List<StripEF> strips)
         {
             ReeksID = reeksID;

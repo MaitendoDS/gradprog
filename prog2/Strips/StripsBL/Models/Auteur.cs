@@ -8,14 +8,14 @@ namespace StripsBL.Models
 {
     public class Auteur
     {
-        public Auteur(int auteurID, string email, string naam)
+        public Auteur(int? auteurID, string naam, string email)
         {
             AuteurID = auteurID;
-            Email = email;
             Naam = naam;
+            Email = email;
         }
 
-        public int AuteurID { get; set; }
+        public int? AuteurID { get; set; }
         public string Naam { get; set; }
         public string Email { get; set; }
 

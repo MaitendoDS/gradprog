@@ -16,8 +16,8 @@ namespace StripsDL.Mappers
             {
                 return new Auteur(
                 auteurEF.AuteurID,
-                auteurEF.Email,
-                auteurEF.Naam
+                auteurEF.Naam,
+                auteurEF.Email
                     );
 
             }
@@ -37,8 +37,8 @@ namespace StripsDL.Mappers
             {
                 return new AuteurEF(
                     auteur.AuteurID,
-                    auteur.Email,
-                    auteur.Naam
+                    auteur.Naam,
+                    auteur.Email
 
                     );
                               

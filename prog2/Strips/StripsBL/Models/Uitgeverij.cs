@@ -12,7 +12,7 @@ namespace StripsBL.Models
         {
         }
 
-        public Uitgeverij(int uitgeverijID, string naam, string adres)
+        public Uitgeverij(int uitgeverijID, string naam, string? adres)
         {
             UitgeverijID = uitgeverijID;
             Naam = naam;
@@ -21,7 +21,7 @@ namespace StripsBL.Models
 
         public int UitgeverijID { get; set; }
         public string Naam { get; set; }
-        public string Adres { get; set; }
+        public string? Adres { get; set; }
 
 
 

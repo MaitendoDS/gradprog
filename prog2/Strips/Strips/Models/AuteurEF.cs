@@ -9,17 +9,22 @@ namespace StripsDL.Models
 {
     public class AuteurEF
     {
-        public AuteurEF(int auteurID, string email, string naam)
+        public AuteurEF(string naam)
         {
-            AuteurID = auteurID;
-            Email = email;
             Naam = naam;
         }
 
+        public AuteurEF(int? auteurID, string naam, string? email)
+        {
+            AuteurID = auteurID;
+            Naam = naam;
+            Email = email;
+        }
+
         [Key]
-        public int AuteurID { get; set; }
+        public int? AuteurID { get; set; }
         public string Naam { get; set; }
-        public string Email { get; set; }
+        public string? Email { get; set; }
 
         
         public List<StripEF> Strips { get; set; }
