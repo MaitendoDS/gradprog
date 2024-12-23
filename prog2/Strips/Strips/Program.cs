@@ -66,7 +66,7 @@ namespace Strips
                         };
 
 
-                        
+
                         List<AuteurEF> auteurList = new List<AuteurEF>();
 
                         foreach (var a in auteursNamen)
@@ -88,34 +88,6 @@ namespace Strips
 
             }
 
-
-            //    rd.ReadLine();
-            //    while (!rd.EndOfStream)
-            //    {
-            //        var splits = rd.ReadLine().Split(';');
-            //        nrs.Add(splits[0]);
-            //        titels.Add(splits[1]);
-            //        uitgeverijen.Add(splits[2]);
-            //        reeksnamen.Add(splits[3]);
-            //        auteurs.Add(splits[4]);
-
-            //    }
-            //}
-
-            //Console.WriteLine("nrs:");
-            //Console.WriteLine(nrs[3]);
-
-            //Console.WriteLine("titels:");
-            //Console.WriteLine(titels[3]);
-
-            //Console.WriteLine("uitgeverijen:");
-            //Console.WriteLine(uitgeverijen[3]);
-
-            //Console.WriteLine("reeksnamen:");
-            //Console.WriteLine(reeksnamen[3]);
-
-            //Console.WriteLine("auteurs:");
-            //Console.WriteLine(auteurs[3]);
 
         }
     }
