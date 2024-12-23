@@ -12,5 +12,8 @@ namespace StripsBL.Interfaces
         Strip GetStrip(int id);
         List<Strip> GetAll();
         Strip Update(Strip strip);
+        bool Delete(int id);
+        Strip Add(Strip strip);
+        Strip DeleteOrAdd(int stripID, int auteurID);
     }
 }

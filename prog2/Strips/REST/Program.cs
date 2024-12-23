@@ -22,6 +22,15 @@ namespace REST
             builder.Services.AddScoped<IUitgeverijRepository, UitgeverijRepository>();
             builder.Services.AddScoped<UitgeverijService>();
 
+            builder.Services.AddScoped<IReeksRepository, ReeksRepository>();
+            builder.Services.AddScoped<ReeksService>();
+
+            builder.Services.AddScoped<IStripRepository, StripRepository>();
+            builder.Services.AddScoped<StripService>();
+
+            builder.Services.AddScoped<IAuteurRepository, AuteurRepository>();
+            builder.Services.AddScoped<AuteurService>();
+
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();

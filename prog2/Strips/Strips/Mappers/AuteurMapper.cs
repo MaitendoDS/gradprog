@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace StripsDL.Mappers
 {
-    public class AuteurMapper
+    public static class AuteurMapper
     {
         public static Auteur MapToBL(AuteurEF auteurEF)
         {

@@ -2,6 +2,7 @@
 using StripsDL.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,21 +16,39 @@ namespace StripsDL.Mappers
         {
             try
             {
-                return new Strip(
-                stripEF.StripID,
-                stripEF.Titel,
-                stripEF.Nummer,
-                stripEF.Reeks != null ? ReeksMapper.MapToBL(stripEF.Reeks) : new Reeks(),
-                stripEF.Auteurs.Select(AuteurMapper.MapToBL).ToList() ?? new List<Auteur>(),
-                stripEF.Uitgeverij != null ? UitgeverijMapper.MapToBL(stripEF.Uitgeverij) : new Uitgeverij()
-
-
-                    );
-
+               Strip strip = new Strip();
+                strip.StripID = stripEF.StripID;
+                strip.Titel = stripEF.Titel;
+                strip.Nummer = stripEF.Nummer;
+                strip.ReeksNummer = stripEF.Reeks.ReeksID;
+                strip.ReeksNaam = stripEF.Reeks.ReeksNaam;
+                strip.Auteurs = stripEF.Auteurs.Select(AuteurMapper.MapToBL).ToList() ?? new List<Auteur>();
+                strip.Uitgeverij = stripEF.Uitgeverij != null ? UitgeverijMapper.MapToBL(stripEF.Uitgeverij) : new Uitgeverij();
+                
+                return strip;
             }
             catch (Exception x)
             {
                 throw new Exception("StripMapper-MapToBL", x);
+            }
+
+        }
+
+
+        public static Strip MapToBLReeks(StripEF stripEF)
+        {
+            try
+            {
+                Strip strip = new Strip();
+                strip.Titel = stripEF.Titel;
+                strip.Nummer = stripEF.Nummer;
+                strip.StripID = stripEF.StripID;
+               
+                return strip;
+            }
+            catch (Exception x)
+            {
+                throw new Exception("StripMapper-MapToBLReeks", x);
             }
 
         }

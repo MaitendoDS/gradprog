@@ -32,7 +32,7 @@ namespace StripsDL.Repositories
             catch (Exception x)
             {
 
-                throw new Exception("ReeksrRepository-GetReeks", x);
+                throw new Exception("ReeksRepository-GetReeks", x);
             }
         }
 

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace StripsBL.Services
 {
-    public class StripService: IStripRepository
+    public class StripService : IStripRepository
     {
 
         IStripRepository _stripRepository;
@@ -19,6 +19,45 @@ namespace StripsBL.Services
             _stripRepository = stripRepository;
         }
 
+        public bool Delete(int id)
+        {
+            try
+            {
+
+                return _stripRepository.Delete(id);
+            }
+            catch (Exception x)
+            {
+
+                throw new Exception("StripService-Delete", x);
+            }
+        }
+
+        public Strip Add(Strip strip)
+        {
+            try
+            {
+                return _stripRepository.Add(strip);
+            }
+            catch (Exception x)
+            {
+
+                throw new Exception("StripService-Add", x);
+            }
+        }
+
+        public Strip DeleteOrAdd(int stripID, int auteurID)
+        {
+            try
+            {
+                return _stripRepository.DeleteOrAdd(stripID, auteurID);
+            }
+            catch (Exception x)
+            {
+
+                throw new Exception("StripService-DeleteOrAdd", x);
+            }
+        }
 
         public List<Strip> GetAll()
         {

@@ -18,7 +18,7 @@ namespace StripsDL.Mappers
                 return new Reeks(
                 reeksEF.ReeksID,
                 reeksEF.ReeksNaam,
-                reeksEF.Strips.Select(StripMapper.MapToBL).ToList() ?? new List<Strip>()
+                reeksEF.Strips.Select(StripMapper.MapToBLReeks).ToList() ?? new List<Strip>()
                     );
 
             }

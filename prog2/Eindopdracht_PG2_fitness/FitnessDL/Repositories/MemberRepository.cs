@@ -20,11 +20,7 @@ namespace FitnessDL.Repositories
         {
             _context = context;
         }
-        private void SaveAndClear()
-        {
-            _context.SaveChanges();
-            _context.ChangeTracker.Clear();
-        }
+        
 
         public Member GetMember(int id)
         {
