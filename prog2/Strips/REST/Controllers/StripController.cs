@@ -38,9 +38,42 @@ namespace REST.Controllers
         [Route("GetStripById/{id}")]
         [HttpGet]
 
-        public Strip GetStrip(int id)
+        public GetStripDTO GetStrip(int id)
         {
-            return _stripService.GetStrip(id);
+            Strip strip = _stripService.GetStrip(id);
+            GetStripDTO getStripDTO = new GetStripDTO();
+
+
+
+
+            getStripDTO.Url = "https://localhost:7181/api/Strip/GetStripById/" + id;
+            getStripDTO.Titel = strip.Titel;
+            getStripDTO.Nummer = strip.Nummer;
+            getStripDTO.Reeks = strip.ReeksNaam;
+            getStripDTO.ReeksUrl = "https://localhost:7181/api/Reeks/GetReeksById/" + strip.ReeksNummer;
+            getStripDTO.Uitgeverij = strip.Uitgeverij.Naam;
+            getStripDTO.UitgeverijUrl = "hier url in" + strip.Uitgeverij.UitgeverijID;
+
+
+            List<AuteurStripDTO> auteurStripDTOList = new List<AuteurStripDTO>();
+
+
+            foreach (var item in strip.Auteurs)
+            {
+                AuteurStripDTO auteurStripDTO = new AuteurStripDTO();
+
+                auteurStripDTO.Auteur = item.Naam;
+                auteurStripDTO.Url = "url hierrr" + id;
+
+                auteurStripDTOList.Add(auteurStripDTO);
+
+            }
+                getStripDTO.AuteurStripDTO = auteurStripDTOList;
+
+            return getStripDTO;
+
+
+
         }
 
 
