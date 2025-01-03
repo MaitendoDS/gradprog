@@ -1,4 +1,5 @@
-﻿using Strips;
+﻿using Microsoft.EntityFrameworkCore;
+using Strips;
 using StripsBL.Interfaces;
 using StripsBL.Models;
 using StripsDL.Mappers;
@@ -19,6 +20,23 @@ namespace StripsDL.Repositories
             _context = context;
         }
 
+
+        public Auteur GetAuteur(int id)
+        {
+
+            try
+            {
+                var auteur = _context.Auteur.FirstOrDefault(u => u.AuteurID == id);
+
+                return auteur != null ? AuteurMapper.MapToBL(auteur) : throw new Exception("Auteur is null");
+
+            }
+            catch (Exception x)
+            {
+
+                throw new Exception("AuteurRepository-GetAuteur", x);
+            }
+        }
 
         public Auteur Update(Auteur auteur)
         {

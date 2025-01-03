@@ -4,11 +4,11 @@ namespace REST.DTO
 {
     public class StripDTO
     {
+      
         public string Titel { get; set; }
         public int? Nummer { get; set; }
-
-        public Reeks Reeks { get; set; }
-        public List<Auteur> Auteurs { get; set; }
-        public Uitgeverij Uitgeverij { get; set; }
+        public int ReeksID { get; set; }
+        public int UitgeverijID { get; set; }
+        public int AuteurID { get; set; }
     }
 }

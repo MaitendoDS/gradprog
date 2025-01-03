@@ -34,6 +34,17 @@ namespace StripsBL.Models
             Uitgeverij = uitgeverij;
         }
 
+        public Strip(int stripID, string titel, int? nummer, int? reeksNummer, Uitgeverij? uitgeverij)
+        {
+            StripID = stripID;
+            Titel = titel;
+            Nummer = nummer;
+            ReeksNummer = reeksNummer;
+            Uitgeverij = uitgeverij;
+        }
+
+
+
         public int StripID { get; set; }
         public string Titel { get; set; }
         public int? Nummer { get; set; }
@@ -43,5 +54,6 @@ namespace StripsBL.Models
         public Reeks Reeks { get; set; }
         public List<Auteur>? Auteurs { get; set; }
         public Uitgeverij? Uitgeverij { get; set; }
+        
     }
 }

@@ -20,6 +20,14 @@ namespace REST.Controllers
 
         }
 
+        [Route("GetAuteurById")]
+        [HttpGet]
+
+        public Auteur GetAuteur(int id)
+        {
+            Auteur auteur = _auteurService.GetAuteur(id);
+            return auteur;
+        }
 
         [Route("Update/{id}")]
         [HttpPut]
@@ -34,6 +42,7 @@ namespace REST.Controllers
 
             return _auteurService.Update(auteur);
         }
+
 
     }
 }

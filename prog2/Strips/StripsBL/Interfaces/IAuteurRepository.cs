@@ -10,6 +10,6 @@ namespace StripsBL.Interfaces
     public interface IAuteurRepository
     {
         Auteur Update(Auteur auteur);
-
+        Auteur GetAuteur(int id);
     }
 }

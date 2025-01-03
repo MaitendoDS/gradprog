@@ -21,6 +21,14 @@ namespace REST.Controllers
 
         }
 
+        [Route("GetUitgeverijById")]
+        [HttpGet]
+
+        public Uitgeverij GetUitgeverij(int id)
+        {
+            Uitgeverij uitgeverij = _uitgeverijService.GetUitgeverij(id);
+            return uitgeverij;
+        }
 
         [Route("Update/{id}")]
         [HttpPut]
@@ -36,6 +44,10 @@ namespace REST.Controllers
 
             return _uitgeverijService.Update(uitgeverij);
         }
+
+
+       
+
 
     }
 }

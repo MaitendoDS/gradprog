@@ -21,6 +21,20 @@ namespace StripsBL.Services
         }
 
 
+        public Auteur GetAuteur(int id)
+        {
+            try
+            {
+                return _auteurRepository.GetAuteur(id);
+            }
+            catch (Exception x)
+            {
+
+                throw new Exception("AuteurService-GetAuteur", x);
+            }
+        }
+
+
         public Auteur Update(Auteur auteur)
         {
             try

@@ -12,26 +12,15 @@ namespace REST.Controllers
     {
 
         StripService _stripService;
-        public StripController(StripService stripService)
+        UitgeverijService _uitgeverijService;
+        ReeksService _reeksService;
+        AuteurService _auteurService;
+        public StripController(StripService stripService,UitgeverijService uitgeverijService, ReeksService reeksService, AuteurService auteurService)
         {
             _stripService = stripService;
-        }
-
-        [Route("Update/{id}")]
-        [HttpPut]
-
-        public Strip Update(int id, [FromBody] StripDTO stripDTO)
-        {
-            Strip strip = new Strip(
-                id,
-                stripDTO.Titel,
-                stripDTO.Nummer,
-                stripDTO.Reeks,
-                stripDTO.Auteurs,
-                stripDTO.Uitgeverij
-                );
-
-            return _stripService.Update(strip);
+            _uitgeverijService = uitgeverijService;
+            _reeksService = reeksService;
+            _auteurService = auteurService;
         }
 
 
@@ -52,7 +41,7 @@ namespace REST.Controllers
             getStripDTO.Reeks = strip.ReeksNaam;
             getStripDTO.ReeksUrl = "https://localhost:7181/api/Reeks/GetReeksById/" + strip.ReeksNummer;
             getStripDTO.Uitgeverij = strip.Uitgeverij.Naam;
-            getStripDTO.UitgeverijUrl = "hier url in" + strip.Uitgeverij.UitgeverijID;
+            getStripDTO.UitgeverijUrl = "https://localhost:7181/api/Uitgeverij/GetUitgeverijById/" + strip.Uitgeverij.UitgeverijID;
 
 
             List<AuteurStripDTO> auteurStripDTOList = new List<AuteurStripDTO>();
@@ -63,7 +52,7 @@ namespace REST.Controllers
                 AuteurStripDTO auteurStripDTO = new AuteurStripDTO();
 
                 auteurStripDTO.Auteur = item.Naam;
-                auteurStripDTO.Url = "url hierrr" + id;
+                auteurStripDTO.Url = "https://localhost:7181/api/Auteur/GetAuteurById/" + item.AuteurID;
 
                 auteurStripDTOList.Add(auteurStripDTO);
 
@@ -86,23 +75,53 @@ namespace REST.Controllers
         }
 
 
+
+
+
         [Route("Add")]
         [HttpPost]
         public Strip Add([FromBody] StripDTO stripDTO)
         {
+            Uitgeverij uitgeverij = _uitgeverijService.GetUitgeverij(stripDTO.UitgeverijID);
+            Reeks reeks = _reeksService.GetReeks(stripDTO.ReeksID);
+            List<Auteur> auteurs = new List<Auteur>();
+            Auteur auteur = _auteurService.GetAuteur(stripDTO.AuteurID);
+            auteurs.Add(auteur);
+
             Strip strip = new Strip(
                 0,
                 stripDTO.Titel,
                 stripDTO.Nummer,
-                stripDTO.Reeks,
-                stripDTO.Auteurs,
-                stripDTO.Uitgeverij
+                reeks,
+                auteurs,
+                uitgeverij
                 );
 
             return _stripService.Add(strip);
         }
+        [Route("Update/{id}")]
+        [HttpPut]
 
-        [Route("DeleteOrAdd/{id}")]
+        public Strip Update(int id, [FromBody] StripDTO stripDTO)
+        {
+            Uitgeverij uitgeverij = _uitgeverijService.GetUitgeverij(stripDTO.UitgeverijID);
+            Reeks reeks = _reeksService.GetReeks(stripDTO.ReeksID);
+            List<Auteur> auteurs = new List<Auteur>();
+            
+
+            Strip strip = new Strip(
+                id,
+                stripDTO.Titel,
+                stripDTO.Nummer,
+                reeks,
+                auteurs,
+                uitgeverij
+                );
+
+            return _stripService.Update(strip);
+        }
+
+        [Route("DeleteOrAddAuteur")]
         [HttpPut]
         public Strip DeleteOrAdd(int stripID, int auteurID)
         {

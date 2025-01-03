@@ -51,6 +51,24 @@ namespace StripsDL.Mappers
             }
         }
 
+        public static ReeksEF MapToDLZonderStrip(Reeks reeks)
+        {
+
+            try
+            {
+                return new ReeksEF(
+                reeks.ReeksID,
+                reeks.ReeksNaam
+                    );
+
+            }
+            catch (Exception x)
+            {
+
+                throw new Exception("AuteurMapper-MapToDLZonderStrip", x);
+            }
+        }
+
 
     }
 }

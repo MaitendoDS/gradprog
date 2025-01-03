@@ -23,7 +23,12 @@ namespace StripsDL.Repositories
         {
             try
             {
-                return _context.Strip.Select(s => StripMapper.MapToBL(s)).ToList();
+
+                return _context.Strip
+                    .Include(s => s.Auteurs)
+                    .Include(s => s.Reeks)
+                    .Include(s => s.Uitgeverij)
+                    .Select(s => StripMapper.MapToBL(s)).ToList();
 
 
             }
@@ -58,7 +63,15 @@ namespace StripsDL.Repositories
         {
             try
             {
-                StripEF stripEF = _context.Strip.Find(stripID);
+
+                StripEF stripEF = _context.Strip
+                    .Include(s => s.Auteurs)
+                    .Include(s => s.Reeks)
+                    .Include(s => s.Uitgeverij)
+                    .FirstOrDefault(s => s.StripID == stripID);
+
+               
+
                 AuteurEF auteurEF = _context.Auteur.Find(auteurID);
 
                 if (stripEF == null)
@@ -80,6 +93,10 @@ namespace StripsDL.Repositories
                 {
                     stripEF.Auteurs.Add(auteurEF);
                 }
+
+                _context.Entry(stripEF).CurrentValues.SetValues(stripEF);
+                _context.SaveChanges();
+
                 return StripMapper.MapToBL(stripEF);
 
             }
@@ -94,18 +111,28 @@ namespace StripsDL.Repositories
         {
             try
             {
-
-
-                StripEF stripEF = _context.Strip.Where(s => s.Titel == strip.Titel && s.Reeks == ReeksMapper.MapToDL(strip.Reeks))
+                StripEF stripEFDoubleCheck = _context.Strip.Where(s => s.Titel == strip.Titel && s.Reeks == ReeksMapper.MapToDLZonderStrip(strip.Reeks))
                     .FirstOrDefault();
 
-                if (stripEF != null)
+                if (stripEFDoubleCheck != null)
                 {
                     throw new Exception("Strip bestaat al");
                 }
                 else
                 {
-                    _context.Strip.Add(StripMapper.MapToDL(strip));
+
+                    StripEF stripEF = StripMapper.MapToDL(strip);
+                    ReeksEF reeksEF = _context.Reeks.Find(stripEF.Reeks.ReeksID);
+                    AuteurEF auteurEF = _context.Auteur.Find(stripEF.Auteurs[0].AuteurID);
+                    List<AuteurEF> auteurEFList = new List<AuteurEF>();
+                    auteurEFList.Add(auteurEF);
+
+                    stripEF.Auteurs = auteurEFList;
+                    stripEF.Reeks = reeksEF;
+                    UitgeverijEF uitgeverijEF = _context.Uitgeverij.Find(stripEF.Uitgeverij.UitgeverijID);
+                    stripEF.Uitgeverij = uitgeverijEF;
+
+                    _context.Strip.Add(stripEF);
                     _context.SaveChanges();
                     return strip;
 
@@ -153,20 +180,31 @@ namespace StripsDL.Repositories
             try
             {
 
-                StripEF stripEF1 = _context.Strip.Where(s => s.Titel == strip.Titel && s.Reeks == ReeksMapper.MapToDL(strip.Reeks))
+                StripEF stripEF1 = _context.Strip.Where(s => s.Titel == strip.Titel && s.Reeks == ReeksMapper.MapToDLZonderStrip(strip.Reeks))
                     .FirstOrDefault();
 
                 if (stripEF1 != null)
                 {
                     throw new Exception("Strip bestaat al");
                 }
-                
 
-                StripEF stripEF = _context.Strip.Find(strip.StripID);
 
-                if (stripEF != null)
+                StripEF stripEF2 = _context.Strip.Include(s=>s.Auteurs).FirstOrDefault(s=>s.StripID == strip.StripID);
+
+                if (stripEF2 != null)
                 {
-                    _context.Entry(stripEF).CurrentValues.SetValues(StripMapper.MapToDL(strip));
+                    StripEF stripEF = StripMapper.MapToDL(strip);
+
+                    ReeksEF reeksEF = _context.Reeks.Find(stripEF.Reeks.ReeksID);
+                    stripEF.Reeks = reeksEF;
+                    UitgeverijEF uitgeverijEF = _context.Uitgeverij.Find(stripEF.Uitgeverij.UitgeverijID);
+                    stripEF.Uitgeverij = uitgeverijEF;
+
+                    stripEF.Auteurs = stripEF2.Auteurs;
+
+
+
+                    _context.Entry(stripEF2).CurrentValues.SetValues(stripEF);
                     _context.SaveChanges();
 
                     return StripMapper.MapToBL(stripEF);

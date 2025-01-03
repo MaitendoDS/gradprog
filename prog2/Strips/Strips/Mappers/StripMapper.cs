@@ -61,7 +61,7 @@ namespace StripsDL.Mappers
                 strip.StripID,
                 strip.Titel,
                 strip.Nummer,
-                strip.Reeks != null ? ReeksMapper.MapToDL(strip.Reeks) : new ReeksEF(),
+                strip.Reeks != null ? ReeksMapper.MapToDLZonderStrip(strip.Reeks) : new ReeksEF(),
                 strip.Auteurs.Select(AuteurMapper.MapToDL).ToList() ?? new List<AuteurEF>(),
                 strip.Uitgeverij != null ? UitgeverijMapper.MapToDL(strip.Uitgeverij) : new UitgeverijEF()
 
@@ -75,6 +75,8 @@ namespace StripsDL.Mappers
             }
 
         }
+
+       
 
     }
 }

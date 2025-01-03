@@ -24,33 +24,52 @@ namespace REST.Controllers
         [Route("GetReeksById/{id}")]
         [HttpGet]
 
-        public ReeksDTO GetReeks(int id)
+        public IActionResult GetReeks(int id)
         {
-
-            Reeks reeks = _reeksService.GetReeks(id);
-            ReeksDTO reeksDTO = new ReeksDTO();
-
-            reeksDTO.Naam = reeks.ReeksNaam;
-            reeksDTO.Nummer = reeks.ReeksID;
-            reeksDTO.Url = "https://localhost:7181/api/Reeks/GetReeksById/" + id;
-
-            List<StripReeksDTO> stripReeksDTOList = new List<StripReeksDTO>();
-
-            foreach (var item in reeks.Strips)
+            try
             {
-                StripReeksDTO stripReeksDTO = new StripReeksDTO();
+                Reeks reeks = new Reeks();
+                try
+                {
+                    reeks = _reeksService.GetReeks(id);
 
-                stripReeksDTO.Titel = item.Titel;
-                stripReeksDTO.Nummer = item.Nummer;
-                stripReeksDTO.Url = "https://localhost:7181/api/Strip/GetStripById/" + item.StripID;
+                }
+                catch (Exception)
+                {
 
-                stripReeksDTOList.Add(stripReeksDTO);
+                    return NotFound();
+                }
+                ReeksDTO reeksDTO = new ReeksDTO();
+
+                reeksDTO.Naam = reeks.ReeksNaam;
+                reeksDTO.Nummer = reeks.ReeksID;
+                reeksDTO.Url = "https://localhost:7181/api/Reeks/GetReeksById/" + id;
+
+                List<StripReeksDTO> stripReeksDTOList = new List<StripReeksDTO>();
+
+                foreach (var item in reeks.Strips)
+                {
+                    StripReeksDTO stripReeksDTO = new StripReeksDTO();
+
+                    stripReeksDTO.Titel = item.Titel;
+                    stripReeksDTO.Nummer = item.Nummer;
+                    stripReeksDTO.Url = "https://localhost:7181/api/Strip/GetStripById/" + item.StripID;
+
+                    stripReeksDTOList.Add(stripReeksDTO);
+                }
+
+                reeksDTO.StripReeksDTO = stripReeksDTOList;
+                return Ok(reeksDTO);
+
+            }
+            catch (Exception)
+            {
+
+                return BadRequest();
             }
 
-            reeksDTO.StripReeksDTO= stripReeksDTOList;
 
-            return reeksDTO;
-            
+
         }
 
 
