@@ -21,5 +21,6 @@ namespace ConsoleAppSquareMaster.Models
         public double? Coverage { get; set; }
         public bool[,] Land { get; set; }
         public List<Empire> Empires { get; set; }
+        public List<Run> Runs { get; set; } 
     }
 }

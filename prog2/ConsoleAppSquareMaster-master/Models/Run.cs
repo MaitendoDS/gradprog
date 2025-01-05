@@ -1,5 +1,4 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,9 +8,8 @@ namespace ConsoleAppSquareMaster.Models
 {
     public class Run
     {
-        [BsonId]
-        public int Id { get; set; }
-        public WorldTable MyProperty { get; set; }
-
+        public int RunNumber { get; set; }
+        public List<Empire> Empires { get; set; }
+        public int[,] FinalWorldState { get; set; } // Wereld na deze run
     }
 }
