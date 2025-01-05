@@ -9,7 +9,8 @@ namespace ConsoleAppSquareMaster.Models
     public class Run
     {
         public int RunNumber { get; set; }
-        public List<Empire> Empires { get; set; }
-        public int[,] FinalWorldState { get; set; } // Wereld na deze run
+        public List<EmpireInfo> Empires { get; set; }
+        public int[,] FinalWorldState { get; set; } // wereld na deze run
+        
     }
 }

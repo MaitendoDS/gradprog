@@ -9,7 +9,7 @@ namespace ConsoleAppSquareMaster.Conquerers
     public class Conquerer3 : IConquerer
     {
 
-        private Random random = new Random(1);
+        private Random random = new Random();
 
         public int[,] Conquer(bool[,] world, int empireID, int turns)
         {

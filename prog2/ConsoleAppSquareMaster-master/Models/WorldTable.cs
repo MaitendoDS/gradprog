@@ -10,7 +10,6 @@ namespace ConsoleAppSquareMaster.Models
 {
     public class WorldTable
     {
-        //Voorzie ook een naam voor elke wereld, het type(welk algoritme is gebruikt), de afmetingen(maximale x- en y-waarden) en de dekkingsgraad.
         [BsonId]
         public int Id { get; set; }
         public string Name { get; set; }

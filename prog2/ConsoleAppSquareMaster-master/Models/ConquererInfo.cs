@@ -7,14 +7,11 @@ using System.Threading.Tasks;
 
 namespace ConsoleAppSquareMaster.Models
 {
-    public class Empire
+    public class ConquererInfo
     {
         [BsonId]
         public int Id { get; set; }
-        public string Name { get; set; }
+        public double AvgCoverage { get; set; }
 
-        public bool Con1 { get; set; } = false;
-        public bool Con2 { get; set; } = false;
-        public bool Con3 { get; set; } = false;
     }
 }

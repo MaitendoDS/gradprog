@@ -13,7 +13,7 @@ namespace ConsoleAppSquareMaster
     {
         private const int drawingFactor = 8;
         private string path= @"C:\Users\maite\OneDrive - Hogeschool Gent\Bureaublad";
-        public void DrawWorld(int[,] world,int nummer)
+        public void DrawWorld(int[,] world,int id, int nummer)
         {
             Color[] cvalues = new Color[] {Color.Green, Color.Red, Color.Yellow, Color.Blue, Color.Cyan, Color.GreenYellow,Color.Gold,Color.Ivory,Color.NavajoWhite };
             Bitmap bm = new Bitmap(world.GetLength(0) * drawingFactor, world.GetLength(1)* drawingFactor);
@@ -39,7 +39,7 @@ namespace ConsoleAppSquareMaster
                     }
                 }
             //var x = Path.Combine(path, woodID.ToString() + "_escapeRoutes.jpg");
-            bm.Save(Path.Combine(path, $"world{nummer}.jpg"), ImageFormat.Jpeg);
+            bm.Save(Path.Combine(path, $"world{id}_game{nummer}.jpg"), ImageFormat.Jpeg);
         }
     }
 }
