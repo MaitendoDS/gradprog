@@ -4,10 +4,8 @@ import Header from '../Components/Header';
 const RootLayout = () => {
   return (
     <div>
-      {/* Header wordt bovenaan weergegeven */}
-      <Header />
       
-      {/* Hier worden de child-routes weergegeven */}
+      <Header />
       <main className="p-4">
         <Outlet />
       </main>
