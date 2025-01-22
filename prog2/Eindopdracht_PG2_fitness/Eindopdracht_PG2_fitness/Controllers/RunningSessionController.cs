@@ -18,7 +18,7 @@ namespace Eindopdracht_PG2_fitness.Controllers
         }
 
 
-        [Route("GetRunningSessionById/{id}")]
+        [Route("{id}")]
         [HttpGet]
 
         public RunningSession_Main Get(int id)

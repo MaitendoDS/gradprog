@@ -1,4 +1,5 @@
 ﻿using Eindopdracht_PG2_fitness.DTO;
+using FitnessBL.DTO;
 using FitnessBL.Models;
 using FitnessBL.Services;
 using Microsoft.AspNetCore.Http;
@@ -18,23 +19,29 @@ namespace Eindopdracht_PG2_fitness.Controllers
             _reservationService = reservationService;
 
         }
+        [Route("{id}")]
+        [HttpGet]
 
-        [Route("AddReservation")]
-        [HttpPost]
-
-        public Reservation Add([FromBody] ReservationDTO reservationDTO)
+        public ReservationsPerDay Get(int id)
         {
-            Reservation reservation = new Reservation();
-            reservation.ReservationID = 0;
-            reservation.EquipmentID = reservationDTO.EquipmentID;
-            reservation.TimeSlotID = reservationDTO.TimeSlotID;
-            reservation.Date = reservationDTO.Date;
-            reservation.MemberID = reservationDTO.MemberID;
-
-            return _reservationService.Add(reservation);
+            return _reservationService.Get(id);
         }
 
-        [Route("UpdateReservation")]
+        [HttpPost]
+
+        public IActionResult Add([FromBody] ReservationsPerDayDTO reservationPerDayDTO)
+        {
+            try
+            {
+                _reservationService.Add(reservationPerDayDTO);
+                return Ok("Ok");
+            }
+            catch (Exception x)
+            {
+                return BadRequest(new { message = x.Message });
+            }
+        }
+
         [HttpPut]
 
         public Reservation Update(int id, [FromBody] ReservationDTO reservationDTO)
@@ -50,7 +57,7 @@ namespace Eindopdracht_PG2_fitness.Controllers
             return _reservationService.Update(reservation);
         }
 
-        [Route("Delete/{id}")]
+        [Route("{id}")]
         [HttpDelete]
 
         public bool Delete(int id)

@@ -24,17 +24,14 @@ namespace FitnessDL.Repositories
 
         public Member GetMember(int id)
         {
-
             try
             {
-
                 var member = _context.Members
                     .Include(m => m.CyclingSessions)
                     .Include(m => m.Programmas)
                     .Include(m => m.RunningSessions)
                     .Include(m => m.Reservations)
                     .FirstOrDefault(m => m.MemberID==id);
-
 
                 return member != null ? MapMember.MapToBL(member) : throw new Exception("Member is null");
             }
@@ -47,15 +44,14 @@ namespace FitnessDL.Repositories
 
         public List<Member> GetAll()
         {
-
             try
             {
                 return _context.Members
-                    .Include(m => m.CyclingSessions)
-                    .Include(m => m.Programmas)
-                    .Include(m => m.RunningSessions)
-                    .Include(m => m.Reservations)
-                    .Select(m => MapMember.MapToBL(m)).ToList();                
+                    //.Include(m => m.CyclingSessions)
+                    //.Include(m => m.Programmas)
+                    //.Include(m => m.RunningSessions)
+                    //.Include(m => m.Reservations)
+                    .Select(m => MapMember.MapToBL(m)).ToList();
             }
             catch (Exception x)
             {
@@ -65,7 +61,6 @@ namespace FitnessDL.Repositories
         }
         public bool Delete(int id)
         {
-
             try
             {
                 MemberEF member = new MemberEF(); // zodat ef naar memberID kan kijken en dan de member met dezlfde id vverwijderen
@@ -85,7 +80,6 @@ namespace FitnessDL.Repositories
         }
         public Member Update(Member member)
         {
-
             try
             {
                 MemberEF memberEF = _context.Members.Find(member.MemberID);
@@ -96,13 +90,11 @@ namespace FitnessDL.Repositories
                     _context.SaveChanges();
 
                     return MapMember.MapToBL(memberEF);
-
                 }
                 else
                 {
                     throw new Exception("Member niet gevonden");
                 }
-
             }
             catch (Exception x)
             {
@@ -113,7 +105,6 @@ namespace FitnessDL.Repositories
 
         public Member Add(Member member)
         {
-
             try
             {
                 var memberEF = MapMember.MapToDL(member);
@@ -124,7 +115,6 @@ namespace FitnessDL.Repositories
             }
             catch (Exception x)
             {
-
                 throw new Exception("MemberRepository-Add", x);
             }
         }

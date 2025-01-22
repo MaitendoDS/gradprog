@@ -4,9 +4,19 @@ import { useEffect, useState } from "react";
 function FitnessBeheerPage() {
   const { id } = useParams();
 
+
+  const [message, setMessage] = useState('');
+  const [messageStyle, setMessageStyle] = useState(0);
   const [date, setDate] = useState('');
-  const [timeslot, setTimeslot] = useState('');
-  const [equipment, setEquipment] = useState('');
+  const [timeslot1, setTimeslot1] = useState('');
+  const [timeslot2, setTimeslot2] = useState('');
+  const [timeslot3, setTimeslot3] = useState('');
+  const [timeslot4, setTimeslot4] = useState('');
+
+  const [equipment1, setEquipment1] = useState('');
+  const [equipment2, setEquipment2] = useState('');
+  const [equipment3, setEquipment3] = useState('');
+  const [equipment4, setEquipment4] = useState('');
   const [data, setData] = useState([]);
 
   const timeslots = [
@@ -27,29 +37,62 @@ function FitnessBeheerPage() {
   ];
 
   useEffect(() => {
-    fetch("http://localhost:5253/api/Equipment/GetAllEquipment")
+    fetch("http://localhost:5253/api/Equipment")
       .then((response) => response.json())
       .then((data) => setData(data))
       .catch((error) => console.error(error));
   }, []);
 
+  
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const reservationData = { "equipmentID":equipment, "timeSlotID":timeslot, date, "memberID":id };
+    const reservationData = { 
+      "EquipmentID1":equipment1 || '0' ,
+      "TimeSlotID1":timeslot1 || '0',
 
-      fetch("http://localhost:5253/api/Reservation/AddReservation", {
+      "EquipmentID2":equipment2 || '0',
+      "TimeSlotID2":timeslot2 || '0',
+
+      "EquipmentID3":equipment3 || '0',
+      "TimeSlotID3":timeslot3 || '0',
+
+      "EquipmentID4":equipment4 || '0',
+      "TimeSlotID4":timeslot4 || '0',
+      date,
+      "MemberID":id 
+      
+    };
+    console.log("klik")
+
+      fetch("http://localhost:5253/api/Reservation", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(reservationData),
       })
-        .then((response) => response.json())
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.message) {
+          setMessage(data.message);
+          setMessageStyle(1);
+        } else {
+          setMessage('An error occurred while making the reservation.');
+          setMessageStyle(1);
+        }
+      })
+      .catch(() => {
+        setMessage('Reservation successfully made!');
+          setMessageStyle(0);
+      });
        
     
-    console.log({ date, timeslot, equipment });
+
   };
+
+
 
   const containerStyle = {
     display: 'flex',
@@ -83,6 +126,7 @@ function FitnessBeheerPage() {
     fontSize: '1.1rem',
     color: '#7f8c8d',
     marginBottom: '10px',
+
   };
 
   const inputStyle = {
@@ -103,6 +147,7 @@ function FitnessBeheerPage() {
     borderRadius: '8px',
     boxSizing: 'border-box',
     color: '#34495e',
+    margin :'2px'
   };
 
   const buttonStyle = {
@@ -141,8 +186,8 @@ function FitnessBeheerPage() {
           <label htmlFor="timeslot" style={labelStyle}>Tijdslot</label>
           <select
             id="timeslot"
-            value={timeslot}
-            onChange={(e) => setTimeslot(e.target.value)}
+            value={timeslot1}
+            onChange={(e) => setTimeslot1(e.target.value)}
             required
             style={selectStyle}
           >
@@ -153,25 +198,107 @@ function FitnessBeheerPage() {
               </option>
             ))}
           </select>
+          <select
+            id="timeslot"
+            value={timeslot2}
+            onChange={(e) => setTimeslot2(e.target.value)}
+            style={selectStyle}
+          >
+            <option value="">Selecteer eventueel nog een tijdslot</option>
+            {timeslots.map((slot, index) => (
+              <option key={index} value={index+1}>
+                {slot}
+              </option>
+            ))}
+          </select>
+          <select
+            id="timeslot"
+            value={timeslot3}
+            onChange={(e) => setTimeslot3(e.target.value)}
+            style={selectStyle}
+          >
+            <option value="">Selecteer eventueel nog een tijdslot</option>
+            {timeslots.map((slot, index) => (
+              <option key={index} value={index+1}>
+                {slot}
+              </option>
+            ))}
+          </select>
+          <select
+            id="timeslot"
+            value={timeslot4}
+            onChange={(e) => setTimeslot4(e.target.value)}
+        
+            style={selectStyle}
+          >
+            <option value="">Selecteer eventueel nog een tijdslot</option>
+            {timeslots.map((slot, index) => (
+              <option key={index} value={index+1}>
+                {slot}
+              </option>
+            ))}
+          </select>
         </div>
+        
 
         <div style={{ marginBottom: '25px' }}>
           <label htmlFor="equipment" style={labelStyle}>Apparatuur</label>
           <select
             id="equipment"
-            value={equipment}
-            onChange={(e) => setEquipment(e.target.value)}
+            value={equipment1}
+            onChange={(e) => setEquipment1(e.target.value)}
             required
             style={selectStyle}
           >
-            <option value="">Selecteer apparatuur</option>
+            <option value="">Selecteer apparaat</option>
             {data.map((item, index) => (
               <option key={index} value={item.equipmentID}>
                 {item.deviceType}
               </option>
             ))}
           </select>
+          <select
+            id="equipment"
+            value={equipment2}
+            onChange={(e) => setEquipment2(e.target.value)}
+            style={selectStyle}
+          >
+            <option value="">Selecteer eventueel nog een apparaat</option>
+            {data.map((item, index) => (
+              <option key={index} value={item.equipmentID}>
+                {item.deviceType}
+              </option>
+            ))}
+          </select>
+          <select
+            id="equipment"
+            value={equipment3}
+            onChange={(e) => setEquipment3(e.target.value)}
+            style={selectStyle}
+          >
+            <option value="">Selecteer eventueel nog een apparaat</option>
+            {data.map((item, index) => (
+              <option key={index} value={item.equipmentID}>
+                {item.deviceType}
+              </option>
+            ))}
+          </select>
+          <select
+            id="equipment"
+            value={equipment4}
+            onChange={(e) => setEquipment4(e.target.value)}
+            style={selectStyle}
+          >
+            <option value="">Selecteer eventueel nog een apparaat</option>
+            {data.map((item, index) => (
+              <option key={index} value={item.equipmentID}>
+                {item.deviceType}
+              </option>
+            ))}
+          </select>
+
         </div>
+       
 
         <div>
           <button
@@ -182,6 +309,10 @@ function FitnessBeheerPage() {
           >
             Verzenden
           </button>
+          <p style={{ color: messageStyle === 0 ? 'green' : 'red' }}>
+           {message}
+          </p>
+
         </div>
       </form>
     </div>

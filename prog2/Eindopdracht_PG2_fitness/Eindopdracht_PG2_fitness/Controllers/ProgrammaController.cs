@@ -20,14 +20,13 @@ namespace Eindopdracht_PG2_fitness.Controllers
 
         }
 
-        [Route("Add Programma")]
         [HttpPost]
 
         public Programma Add([FromBody]ProgrammaDTO programmaDTO)
         {
 
             Programma programma = new Programma();
-            programma.ProgramCode = 0;
+            programma.ProgramCode = null;
             programma.Name = programmaDTO.Name;
             programma.Target = programmaDTO.Target;
             programma.StartDate = programmaDTO.StartDate;
@@ -36,10 +35,9 @@ namespace Eindopdracht_PG2_fitness.Controllers
            return _programmaService.Add(programma);           
         }
 
-        [Route("Update Programma")]
         [HttpPut]
 
-        public Programma Update(int id, [FromBody] ProgrammaDTO programmaDTO)
+        public Programma Update(string id, [FromBody] ProgrammaDTO programmaDTO)
         {
             Programma programma = new Programma(
                 id,

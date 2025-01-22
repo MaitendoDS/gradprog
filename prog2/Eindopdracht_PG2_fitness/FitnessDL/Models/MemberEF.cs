@@ -8,7 +8,7 @@ namespace FitnessDL.Models
         {
         }
 
-        public MemberEF(int memberID, string firstName, string lastName, string email, string adress, DateTime birthday, List<string?> interests, string memberType, ICollection<RunningSession_MainEF> runningSessions, ICollection<ReservationEF> reservations, ICollection<ProgrammaEF> programmas, ICollection<CyclingSessionEF> cyclingSessions)
+        public MemberEF(int memberID, string firstName, string lastName, string email, string adress, DateTime birthday, List<string>? interests, string memberType, ICollection<RunningSession_MainEF> runningSessions, ICollection<ReservationEF> reservations, ICollection<ProgrammaEF> programmas, ICollection<CyclingSessionEF> cyclingSessions)
         {
             MemberID = memberID;
             FirstName = firstName;
@@ -32,7 +32,7 @@ namespace FitnessDL.Models
         public string Email { get; set; }
         public string Adress { get; set; }
         public DateTime Birthday { get; set; }
-        public List<string?> Interests { get; set; }
+        public List<string>? Interests { get; set; }
         public string MemberType { get; set; }
 
         public ICollection<RunningSession_MainEF> RunningSessions { get; set; } //nav props

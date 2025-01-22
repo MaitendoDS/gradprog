@@ -21,8 +21,6 @@ namespace FitnessDL.Repositories
             _context = context;
         }
 
-
-
         public List<Equipment> GetAll() {
 
             try
@@ -34,9 +32,6 @@ namespace FitnessDL.Repositories
 
                 throw new Exception("EquipmentRepository-GetAll", x);
             }
-        
-        
-        
         
         }
 
@@ -69,8 +64,6 @@ namespace FitnessDL.Repositories
                     equipmentUpdated.EquipmentID = id;
                     equipmentUpdated.DeviceType = equipmentEF.DeviceType;
                     equipmentUpdated.InRepair = !equipmentEF.InRepair;
-
-
 
 
                     if (equipmentUpdated.InRepair == true)

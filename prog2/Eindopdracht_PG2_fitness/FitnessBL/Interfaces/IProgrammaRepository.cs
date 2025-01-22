@@ -11,7 +11,7 @@ namespace FitnessBL.Interfaces
     {
         public Programma Add(Programma programma);
         public Programma Update(Programma programma);
-        bool Delete(int id);
+        bool Delete(string id);
 
 
     }

@@ -39,5 +39,6 @@ namespace FitnessDL.Models
         public MemberEF Member { get; set; }
         public EquipmentEF Equipment { get; set; }
         public Time_SlotEF TimeSlot { get; set; }
+
     }
 }

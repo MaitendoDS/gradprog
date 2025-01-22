@@ -38,6 +38,9 @@ namespace FitnessBL.Services
         public Equipment Add(Equipment equipment)
         {
 
+
+
+
             try
             {
                 return _equipmentRepository.Add(equipment);

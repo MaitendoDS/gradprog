@@ -12,24 +12,18 @@ namespace FitnessDL.Repositories
 {
     public class ProgrammaRepository : IProgrammaRepository
     {
-
         FitnessContext _context;
         public ProgrammaRepository(FitnessContext context)
         {
             _context = context;
-
         }
-
-
-
         public Programma Add(Programma programma)
         {
-
             try
             {
                 if (programma == null)
                 {
-                    throw new Exception("Programma is null"); 
+                    throw new Exception("Programma is null");
                 }
 
                 var programmaEF = MapProgramma.MapToDL(programma);
@@ -37,19 +31,16 @@ namespace FitnessDL.Repositories
                 _context.SaveChanges();
 
                 return MapProgramma.MapToBL(programmaEF);
-              
             }
             catch (Exception x)
             {
 
                 throw new Exception("ProgrammaRepository-Add", x);
             }
-
         }
 
         public Programma Update(Programma programma)
         {
-
             try
             {
                 ProgrammaEF programmaEF = _context.Programma.Find(programma.ProgramCode);
@@ -66,21 +57,15 @@ namespace FitnessDL.Repositories
                 {
                     throw new Exception("Programma niet gevonden");
                 }
-
-
-
-
             }
             catch (Exception x)
             {
 
                 throw new Exception("ProgrammaRepository-Update", x);
             }
-
         }
-        public bool Delete(int id)
+        public bool Delete(string id)
         {
-
             try
             {
                 ProgrammaEF programmaEF = new ProgrammaEF(); // zodat ef naar memberID kan kijken en dan de member met dezlfde id vverwijderen
@@ -90,11 +75,9 @@ namespace FitnessDL.Repositories
                 _context.SaveChanges();
 
                 return true;
-
             }
             catch (Exception x)
             {
-
                 throw new Exception("ProgrammaRepository-Delete", x);
             }
         }

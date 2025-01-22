@@ -22,7 +22,7 @@ namespace FitnessDL
         public DbSet<RunningSession_DetailEF> Runningsession_Detail { get; set; }
         public DbSet<RunningSession_MainEF> Runningsession_Main { get; set; }
         public DbSet<Time_SlotEF> Time_Slot { get; set; }
-
+        public DbSet<ReservationsPerDayEF> ReservationsPerDay { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

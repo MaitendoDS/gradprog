@@ -49,7 +49,7 @@ namespace FitnessBL.Services
                 throw new Exception("ProgrammaService-Update", x);
             }
         }
-        public bool Delete(int id)
+        public bool Delete(string id)
         {
             try
             {

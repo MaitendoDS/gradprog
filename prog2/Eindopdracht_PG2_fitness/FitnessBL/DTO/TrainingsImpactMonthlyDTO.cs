@@ -1,4 +1,4 @@
-﻿namespace Eindopdracht_PG2_fitness.DTO
+﻿namespace FitnessBL.DTO
 {
     public class TrainingsImpactMonthlyDTO
     {

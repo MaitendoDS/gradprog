@@ -17,7 +17,6 @@ namespace Eindopdracht_PG2_fitness.Controllers
             _equipmentService = equipmentService;
         }
 
-        [Route("GetAllEquipment")]
         [HttpGet]
 
         public List<Equipment> GetAll()
@@ -25,8 +24,6 @@ namespace Eindopdracht_PG2_fitness.Controllers
             return _equipmentService.GetAll();
         }
 
-
-        [Route("Add")]
         [HttpPost]
 
         public Equipment Add([FromBody] EquipmentDTO equipmentDTO)

@@ -9,11 +9,12 @@ namespace FitnessBL.Interfaces
 {
     public interface IReservationRepository
     {
-
-
-        public Reservation Add(Reservation reservation);
+        public (Equipment equipment, Time_Slot timeslot, List<Reservation> reservations, List<Reservation> equipmentlist, List<Reservation> equipmentListMember, List<Time_Slot> timeslots) ReservationInfoProvider(Reservation reservation);
+        public void Add(ReservationsPerDay reservationsPerDay);
+        public Time_Slot GetTimeSlot(int id);
         public Reservation Update(Reservation reservation);
         public bool Delete(int id);
+        public ReservationsPerDay Get(int id);
 
     }
 }
